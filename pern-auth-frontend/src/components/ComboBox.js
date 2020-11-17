@@ -22,6 +22,7 @@ export default function ComboBox() {
     <div>
       {pokemon.length ? (
         <Autocomplete
+          onChange={(event, value) => console.log(value)}
           id='combo-box-demo'
           options={pokemon}
           getOptionLabel={(option) => option}
