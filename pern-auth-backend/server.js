@@ -8,6 +8,10 @@ const morgan = require('morgan')
 const routes = require('./routes')
 const passport = require('./passport')
 
+const Pokedex = require('pokedex-promise-v2')
+const util = require('util')
+
+
 const port = process.env.PORT || 4000
 const app = express()
 
@@ -44,6 +48,12 @@ app.use(passport.session())
 
 // middleware - API routes
 app.use('/api/v1/auth', routes.auth)
+
+//middleware - pokedex
+const P = new Pokedex()
+P.getPokemonsList({limit:150, offset:0}).then(function (response) {
+  console.log(util.inspect(response.results.map(x => x.name), { maxArrayLength: null }))
+})
 
 // connection
 app.listen(port, () => console.log(`Server is running on port ${port}`))
