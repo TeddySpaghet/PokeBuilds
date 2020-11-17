@@ -1,23 +1,38 @@
 /* eslint-disable no-use-before-define */
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
+import React, { useState, useEffect } from 'react'
+import TextField from '@material-ui/core/TextField'
+import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
 export default function ComboBox() {
-    return (
+  const [pokemon, setPokemon] = useState([])
+
+  const getPokemon = () => {
+    const P = new Pokedex()
+    P.getPokemonsList().then((response) =>
+      setPokemon(response.results.map((x) => x.name))
+    )
+  }
+
+  useEffect(() => {
+    getPokemon()
+  }, [])
+
+  return (
+    <div>
+      {pokemon.length ? (
         <Autocomplete
-        id="combo-box-demo"
-        options={pokeName}
-        getOptionLabel={(option) =>  option}
-        style={{ width: 300 }}
-        renderInput={(params) => <TextField {...params} label="Pokemon" variant="outlined" />}
+          id='combo-box-demo'
+          options={pokemon}
+          getOptionLabel={(option) => option}
+          style={{ width: 300 }}
+          renderInput={(params) => (
+            <TextField {...params} label='Pokemon' variant='outlined' />
+          )}
         />
-    );
+      ) : (
+        'loading'
+      )}
+    </div>
+  )
 }
-//usestate() hook, useffect() on component did mount, passing 2nd paramater of an empty array , return conditionally (return with ? operator)
-const P = new Pokedex()
-    const pokeName = P.getPokemonsList({limit:150, offset:0}).then(function (response) {
-        return response.results.map(x => x.name)
-    })
-console.log(pokeName)
