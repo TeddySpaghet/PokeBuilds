@@ -1,12 +1,10 @@
 /* eslint-disable no-use-before-define */
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
-export default function ComboBox() {
-  const [pokemon, setPokemon] = useState([])
-
+export default function ComboBox({ pokemon, setPokemon }) {
   const getPokemon = () => {
     const P = new Pokedex()
     P.getPokemonsList().then((response) =>
@@ -22,6 +20,7 @@ export default function ComboBox() {
     <div>
       {pokemon.length ? (
         <Autocomplete
+          // TODO: CHANGE ONCHANGE TO SET SELECTED POKEMON STATE LOGIC
           onChange={(event, value) => console.log(value)}
           id='combo-box-demo'
           options={pokemon}
