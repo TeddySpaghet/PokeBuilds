@@ -4,12 +4,15 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
-export default function ComboBox({ pokemon, setPokemon }) {
+export default function ComboBox({
+  pokemon,
+  setPokemon,
+  selectedPokemon,
+  setSelectedPokemon,
+}) {
   const getPokemon = () => {
     const P = new Pokedex()
-    P.getPokemonsList().then((response) =>
-      setPokemon(response.results.map((x) => x.name))
-    )
+    P.getPokemonsList().then((response) => setPokemon(response.results))
   }
 
   useEffect(() => {
@@ -21,9 +24,11 @@ export default function ComboBox({ pokemon, setPokemon }) {
       {pokemon.length ? (
         <Autocomplete
           // TODO: CHANGE ONCHANGE TO SET SELECTED POKEMON STATE LOGIC
-          onChange={(event, value) => console.log(value)}
+          onChange={(event, value) =>
+            setSelectedPokemon([pokemon.find((x) => value === x.name)])
+          }
           id='combo-box-demo'
-          options={pokemon}
+          options={pokemon.map((x) => x.name)}
           getOptionLabel={(option) => option}
           style={{ width: 300 }}
           renderInput={(params) => (
