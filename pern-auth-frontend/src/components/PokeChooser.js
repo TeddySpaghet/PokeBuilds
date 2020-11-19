@@ -3,9 +3,13 @@ import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 
-export default function PokeChooser({ pokemon }) {
+export default function PokeChooser({
+  pokemon,
+  selectedPokemon,
+  setSelectedPokemon,
+}) {
   // *** SET THE CHOSEN POKEMON HERE
-  const [selectedPokemon, setSelectedPokemon] = useState(null)
+  // const [selectedPokemon, setSelectedPokemon] = useState(null)
 
   // *** SET THE CHOSEN POKEMON HERE
 

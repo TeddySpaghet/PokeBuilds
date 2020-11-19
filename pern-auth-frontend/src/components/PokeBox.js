@@ -23,6 +23,22 @@ function FormRow({
           selectedPokemonData={selectedPokemonData}
           setSelectedPokemonData={setSelectedPokemonData}
         />
+        <PokeContainer
+          pokemon={pokemon}
+          setPokemon={setPokemon}
+          selectedPokemon={selectedPokemon}
+          setSelectedPokemon={setSelectedPokemon}
+          selectedPokemonData={selectedPokemonData}
+          setSelectedPokemonData={setSelectedPokemonData}
+        />
+        <PokeContainer
+          pokemon={pokemon}
+          setPokemon={setPokemon}
+          selectedPokemon={selectedPokemon}
+          setSelectedPokemon={setSelectedPokemon}
+          selectedPokemonData={selectedPokemonData}
+          setSelectedPokemonData={setSelectedPokemonData}
+        />
         {/* <Box component='span' m={1} height={200} width={200}>
           <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1> */}
         {/* <img src={{selectedPokemon ? selectedPokemon[0].name : missingno}} alt='Logo' /> */}
@@ -60,6 +76,7 @@ const PokeBox = () => {
     <div>
       <Grid container spacing={1}>
         <Grid container item xs={12} spacing={3}>
+          <FormRow pokemon={pokemon} />
           <FormRow pokemon={pokemon} />
         </Grid>
         <Button>Create Team</Button>
