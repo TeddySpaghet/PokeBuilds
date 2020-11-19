@@ -1,24 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
+import Pokedex from 'pokedex-promise-v2'
 
-export const PokeData = () => {
-    const [selectedPokemonData, setSelectedPokemonData] = useState({})
-    const getPokemonData = () => {
-        const P = new Pokedex()
-        if (selectedPokemon) {
-          P.getPokemonByName(selectedPokemon[0].name).then((response) =>
-            setSelectedPokemonData(response)
-          )
-          console.log(selectedPokemon)
-        }
-      }
+const PokeData = ({ selectedPokemon }) => {
+  const [selectedPokemonData, setSelectedPokemonData] = useState({})
+  const getPokemonData = () => {
+    const P = new Pokedex()
+    if (selectedPokemon) {
+      P.getPokemonByName(selectedPokemon[0].name).then((response) =>
+        setSelectedPokemonData(response)
+      )
+    }
+  }
 
-      useEffect(() => {
-        getSelectedPokemonData()
-      }, [selectedPokemon])
-    
-    return (
-        <div>
-            
-        </div>
-    )
+  useEffect(() => {
+    getPokemonData()
+  }, [selectedPokemon])
+
+
+  return <></>
 }
+
+export default PokeData

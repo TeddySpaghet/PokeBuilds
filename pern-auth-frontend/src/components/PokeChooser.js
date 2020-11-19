@@ -1,18 +1,11 @@
 /* eslint-disable no-use-before-define */
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
-import Pokedex from 'pokedex-promise-v2'
 
-export default function PokeChooser() {
-  const [pokemon, setPokemon] = useState([])
-  const [selectedPokemon, setSelectedPokemon] = useState(null)
-
+export default function PokeChooser({ pokemon }) {
   // *** SET THE CHOSEN POKEMON HERE
-  const getPokemon = () => {
-    const P = new Pokedex()
-    P.getPokemonsList().then((response) => setPokemon(response.results))
-  }
+  const [selectedPokemon, setSelectedPokemon] = useState(null)
 
   // *** SET THE CHOSEN POKEMON HERE
 

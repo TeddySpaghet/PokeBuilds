@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import App from './App'
-import PokeContainer from './components/PokeContainer'
+import PokeBox from './components/PokeBox'
 // import PokeBox from './components/PokeBox'
 
 ReactDOM.render(
@@ -15,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <App />
-      <PokeContainer></PokeContainer>
+      <PokeBox />
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
