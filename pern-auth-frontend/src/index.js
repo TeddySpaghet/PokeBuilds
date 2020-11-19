@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import App from './App'
-import ComboBox from './components/ComboBox'
-import PokeBox from './components/PokeBox'
+import PokeContainer from './components/PokeContainer'
+// import PokeBox from './components/PokeBox'
 
 ReactDOM.render(
   // StrictMode is a tool for highlighting potential
@@ -15,9 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <App />
-      <PokeBox>
-        <ComboBox />
-      </PokeBox>
+      <PokeContainer></PokeContainer>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

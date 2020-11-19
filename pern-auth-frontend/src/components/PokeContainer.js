@@ -8,22 +8,9 @@ import MoveContainer from './MoveContainer'
 // for a single pokemon
 
 const PokeContainer = ({ pokemon, selectedPokemon }) => {
-  const [selectedPokemonData, setSelectedPokemonData] = useState({})
 
-  const getSelectedPokemonData = () => {
-    const P = new Pokedex()
-    if (selectedPokemon) {
-      P.getPokemonByName(selectedPokemon[0].name).then((response) =>
-        setSelectedPokemonData(response)
-      )
-      console.log(selectedPokemon)
-    }
-  }
 
-  useEffect(() => {
-    getPokemon()
-    getSelectedPokemonData()
-  }, [selectedPokemon])
+
 
   return (
     <div>
