@@ -7,8 +7,15 @@ import MoveContainer from './MoveContainer'
 
 // for a single pokemon
 
-const PokeContainer = ({ pokemon, selectedPokemon }) => {
-  const [selectedPokemonData, setSelectedPokemonData] = useState({})
+const PokeContainer = ({
+  // selectedPokemonData, setSelectedPokemonData
+  pokemon,
+  setPokemon,
+  selectedPokemon,
+  setSelectedPokemon,
+}) => {
+  // TODO PUT THIS IN ITS SEPARATE COMPONENT
+  const [selectedPokemonData, setSelectedPokemonData] = useState(null)
 
   const getSelectedPokemonData = () => {
     const P = new Pokedex()
@@ -17,6 +24,7 @@ const PokeContainer = ({ pokemon, selectedPokemon }) => {
         setSelectedPokemonData(response)
       )
     }
+    console.log(selectedPokemonData)
   }
 
   useEffect(() => {
@@ -28,8 +36,16 @@ const PokeContainer = ({ pokemon, selectedPokemon }) => {
       <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1>
       {/* <img src={image} alt='' /> */}
       {/* <Button>{single page link}</Button> */}
-      <PokeChooser pokemon={pokemon} selectedPokemon={selectedPokemon} />
-      <MoveContainer moves={selectedPokemonData} />
+      <PokeChooser
+        pokemon={pokemon}
+        selectedPokemon={selectedPokemon}
+        setPokemon={setPokemon}
+        setSelectedPokemon={setSelectedPokemon}
+      />
+      <MoveContainer
+        selectedPokemonData={selectedPokemonData}
+        selectedPokemon={selectedPokemon}
+      />
       {/* <StatContainer stats={selectedPokemonData.stats} /> */}
     </div>
   )
