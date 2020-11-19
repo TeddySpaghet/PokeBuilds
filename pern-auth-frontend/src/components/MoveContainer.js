@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react'
 import MoveBox from './MoveBox'
 
-const MoveContainer = ({ selectedPokemon, selectedPokemonData }) => {
-  useEffect(() => {}, [selectedPokemon])
+const MoveContainer = ({ selectedPokemonData }) => {
   return (
     <div>
       <MoveBox selectedPokemonData={selectedPokemonData} />

@@ -7,18 +7,8 @@ import MoveContainer from './MoveContainer'
 
 // for a single pokemon
 
-const PokeContainer = ({
-  // selectedPokemonData, setSelectedPokemonData
-  selectedPokemon,
-  setSelectedPokemon,
-}) => {
-  const [pokemon, setPokemon] = useState([])
-  const getPokemon = () => {
-    const P = new Pokedex()
-    P.getPokemonsList().then((response) => setPokemon(response.results))
-  }
-  // TODO PUT THIS IN ITS SEPARATE COMPONENT
-  const [selectedPokemonData, setSelectedPokemonData] = useState(null)
+const PokeContainer = ({ pokemon, selectedPokemon }) => {
+  const [selectedPokemonData, setSelectedPokemonData] = useState({})
 
   const getSelectedPokemonData = () => {
     const P = new Pokedex()
@@ -40,15 +30,8 @@ const PokeContainer = ({
       <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1>
       {/* <img src={image} alt='' /> */}
       {/* <Button>{single page link}</Button> */}
-      <PokeChooser
-        pokemon={pokemon}
-        selectedPokemon={selectedPokemon}
-        setSelectedPokemon={setSelectedPokemon}
-      />
-      <MoveContainer
-        selectedPokemonData={selectedPokemonData}
-        selectedPokemon={selectedPokemon}
-      />
+      <PokeChooser pokemon={pokemon} selectedPokemon={selectedPokemon} />
+      <MoveContainer moves={selectedPokemonData} />
       {/* <StatContainer stats={selectedPokemonData.stats} /> */}
     </div>
   )
