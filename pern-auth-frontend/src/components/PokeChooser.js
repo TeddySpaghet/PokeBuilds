@@ -8,11 +8,6 @@ export default function PokeChooser({
   selectedPokemon,
   setSelectedPokemon,
 }) {
-  // *** SET THE CHOSEN POKEMON HERE
-  // const [selectedPokemon, setSelectedPokemon] = useState(null)
-
-  // *** SET THE CHOSEN POKEMON HERE
-
   return (
     <div>
       {pokemon.length ? (
@@ -21,7 +16,7 @@ export default function PokeChooser({
           onChange={(event, value) =>
             setSelectedPokemon([pokemon.find((x) => value === x.name)])
           }
-          id='combo-box-demo'
+          // id='combo-box-demo'
           options={pokemon.map((x) => x.name)}
           getOptionLabel={(option) => option}
           style={{ width: 300 }}

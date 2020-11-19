@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import PokeBox from './components/PokeBox'
 import Routes from './config/Routes'
 import './App.css'
 import UserModel from './models/user'
@@ -10,7 +11,7 @@ function App() {
 
   const storeUser = (userId) => {
     localStorage.setItem('id', userId)
-    setCurrentUser( userId )
+    setCurrentUser(userId)
   }
 
   const logout = (event) => {
@@ -18,25 +19,19 @@ function App() {
 
     localStorage.removeItem('id')
 
-    UserModel.logout()
-      .then(res => {
-        setCurrentUser(null)
-      })
+    UserModel.logout().then((res) => {
+      setCurrentUser(null)
+    })
   }
 
   return (
-    <div className="App">
-      <Header 
-        currentUser={ currentUser } 
-        logout={ logout }
-      />
-      <Routes 
-        currentUser={ currentUser }
-        storeUser={ storeUser }
-      />
+    <div className='App'>
+      <Header currentUser={currentUser} logout={logout} />
+      <Routes currentUser={currentUser} storeUser={storeUser} />
+      <PokeBox />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App 
+export default App

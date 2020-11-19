@@ -4,63 +4,29 @@ import { Grid, Button } from '@material-ui/core'
 import Pokedex from 'pokedex-promise-v2'
 import PokeContainer from './PokeContainer'
 
-function FormRow({
-  pokemon,
-  setPokemon,
+const PokeBox = ({
   selectedPokemon,
   setSelectedPokemon,
   selectedPokemonData,
   setSelectedPokemonData,
-}) {
-  return (
-    <React.Fragment>
-      <Grid item xs={4}>
-        <PokeContainer
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-          selectedPokemonData={selectedPokemonData}
-          setSelectedPokemonData={setSelectedPokemonData}
-        />
-        <PokeContainer
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-          selectedPokemonData={selectedPokemonData}
-          setSelectedPokemonData={setSelectedPokemonData}
-        />
-        <PokeContainer
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-          selectedPokemonData={selectedPokemonData}
-          setSelectedPokemonData={setSelectedPokemonData}
-        />
-        {/* <Box component='span' m={1} height={200} width={200}>
-          <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1> */}
-        {/* <img src={{selectedPokemon ? selectedPokemon[0].name : missingno}} alt='Logo' /> */}
-        {/* <Button>Save</Button> */}
-        {/* </Box> */}
-        {/* <ComboBox
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-        />
-        <MoveBox
-          selectedPokemon={selectedPokemon}
-          moves={moves}
-          setMoves={setMoves}
-        /> */}
-      </Grid>
-    </React.Fragment>
-  )
-}
+}) => {
+  // TODO DO WE NEED STATE FOR TEAM? OR SHOULD WE JUST PULL TEAM STUFF FROM DATABASE WHENEVER WE RENDER A PREEXISTING TEAM?
+  // const [team, setTeam] = useState()
 
-const PokeBox = () => {
+  // const createTeam = () => {
+  // for numbers 1 to 6
+  // iterate over PokeContainer with key={i}
+  // for each PokeContainer key={i}, grab selectedPokemon
+  // for numbers 1 to 4
+  // iterate over MoveContainer with key={i}
+  // for each MoveContainer key={i}, grab selectedMove
+  // do stuff
+
+  //   setTeam({`create team form value`})
+  // }
+
+  // *** END OF TEAM
+
   const [pokemon, setPokemon] = useState([])
 
   const getPokemon = () => {
@@ -74,10 +40,50 @@ const PokeBox = () => {
 
   return (
     <div>
-      <Grid container spacing={1}>
+      <Grid container spacing={10}>
         <Grid container item xs={12} spacing={3}>
-          <FormRow pokemon={pokemon} />
-          <FormRow pokemon={pokemon} />
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'1'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'2'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'3'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'4'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'5'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <PokeContainer
+              key={'6'}
+              pokemon={pokemon}
+              setPokemon={setPokemon}
+            />
+          </Grid>
         </Grid>
         <Button>Create Team</Button>
       </Grid>

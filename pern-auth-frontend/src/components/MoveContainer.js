@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MoveBox from './MoveBox'
 
-const MoveContainer = ({ selectedPokemonData }) => {
+const MoveContainer = ({ selectedPokemon, selectedPokemonData }) => {
+  useEffect(() => {}, [selectedPokemon])
   return (
     <div>
-      <MoveBox selectedPokemonData={selectedPokemonData} />
-      <MoveBox selectedPokemonData={selectedPokemonData} />
-      <MoveBox selectedPokemonData={selectedPokemonData} />
-      <MoveBox selectedPokemonData={selectedPokemonData} />
+      <MoveBox key={1} selectedPokemonData={selectedPokemonData} />
+      <MoveBox key={2} selectedPokemonData={selectedPokemonData} />
+      <MoveBox key={3} selectedPokemonData={selectedPokemonData} />
+      <MoveBox key={4} selectedPokemonData={selectedPokemonData} />
     </div>
   )
 }

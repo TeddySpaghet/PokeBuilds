@@ -17,7 +17,7 @@ const MoveBox = ({ selectedPokemonData }) => {
               selectedPokemonData.moves.find((x) => value === x.name),
             ])
           }
-          id='combo-box-demo'
+          // id='combo-box-demo'
           options={selectedPokemonData.moves.map((x) => x.move.name)}
           getOptionLabel={(option) => option}
           style={{ width: 300 }}
