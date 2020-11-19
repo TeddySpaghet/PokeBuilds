@@ -4,19 +4,10 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
-const PokeChooser = ({pokemon, setPokemon}) => {
-  const [pokemon, setPokemon] = useState([])
+const PokeChooser = ({ pokemon }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(null)
 
   // *** SET THE CHOSEN POKEMON HERE
-  const getPokemon = () => {
-    const P = new Pokedex()
-    P.getPokemonsList().then((response) => setPokemon(response.results))
-  }
-
-  useEffect(() => {
-    getPokemon()
-  }, [])
 
   return (
     <div>

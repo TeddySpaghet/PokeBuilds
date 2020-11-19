@@ -9,11 +9,14 @@ import MoveContainer from './MoveContainer'
 
 const PokeContainer = ({
   // selectedPokemonData, setSelectedPokemonData
-  pokemon,
-  setPokemon,
   selectedPokemon,
   setSelectedPokemon,
 }) => {
+  const [pokemon, setPokemon] = useState([])
+  const getPokemon = () => {
+    const P = new Pokedex()
+    P.getPokemonsList().then((response) => setPokemon(response.results))
+  }
   // TODO PUT THIS IN ITS SEPARATE COMPONENT
   const [selectedPokemonData, setSelectedPokemonData] = useState(null)
 
@@ -23,11 +26,12 @@ const PokeContainer = ({
       P.getPokemonByName(selectedPokemon[0].name).then((response) =>
         setSelectedPokemonData(response)
       )
+      console.log(selectedPokemon)
     }
-    console.log(selectedPokemonData)
   }
 
   useEffect(() => {
+    getPokemon()
     getSelectedPokemonData()
   }, [selectedPokemon])
 
@@ -39,7 +43,6 @@ const PokeContainer = ({
       <PokeChooser
         pokemon={pokemon}
         selectedPokemon={selectedPokemon}
-        setPokemon={setPokemon}
         setSelectedPokemon={setSelectedPokemon}
       />
       <MoveContainer

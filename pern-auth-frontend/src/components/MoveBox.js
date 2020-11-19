@@ -4,10 +4,11 @@ import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
 const MoveBox = ({ selectedPokemon, selectedPokemonData }) => {
-  console.log(`farty! >>>>>> ${selectedPokemonData}`)
   const [selectedMove, setSelectedMove] = useState(null)
 
-  useEffect(() => {}, [selectedPokemon])
+  useEffect(() => {
+    console.log(selectedPokemon)
+  }, [selectedPokemon])
 
   return (
     <div>

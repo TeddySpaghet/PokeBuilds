@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import MoveBox from './MoveBox'
 
-const MoveContainer = ({ selectedPokemonData }) => {
-  console.log(` Movebox console log ${selectedPokemonData}`)
+const MoveContainer = ({ selectedPokemon, selectedPokemonData }) => {
+  useEffect(() => {}, [selectedPokemon])
   return (
     <div>
       <MoveBox selectedPokemonData={selectedPokemonData} />
