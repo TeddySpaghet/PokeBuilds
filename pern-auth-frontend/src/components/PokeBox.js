@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { Grid, Box, Button } from '@material-ui/core'
-import ComboBox from './ComboBox'
+import ComboBox from './PokeChooser'
 import missingno from '../img/missigno.png'
 import MoveBox from './MoveBox'
-
-
 
 function FormRow({
   pokemon,
@@ -19,7 +17,7 @@ function FormRow({
       <Grid item xs={4}>
         <Box component='span' m={1} height={200} width={200}>
           <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1>
-          <img src={{selectedPokemon ? selectedPokemon[0].name : missingno}} alt='Logo' />
+          {/* <img src={{selectedPokemon ? selectedPokemon[0].name : missingno}} alt='Logo' /> */}
           <Button>Save</Button>
         </Box>
         <ComboBox
