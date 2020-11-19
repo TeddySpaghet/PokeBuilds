@@ -7,18 +7,8 @@ const MoveBox = ({ selectedPokemon, setSelectedPokemon }) => {
   const [moves, setMoves] = useState([])
   const [selectedMove, setSelectedMove] = useState(null)
 
-  const getPokemonMoves = () => {
-    console.log(selectedPokemon)
-    const P = new Pokedex()
-    if (selectedPokemon) {
-      P.getPokemonByName(selectedPokemon[0].name).then((response) =>
-        setMoves(response.moves)
-      )
-    }
-  }
-
   useEffect(() => {
-    getPokemonMoves()
+    console.log(selectedPokemon)
   }, [selectedPokemon])
 
   return (
