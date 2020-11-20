@@ -5,27 +5,58 @@ import StatContainer from './StatContainer'
 import PokeData from './PokeData'
 import missingno from '../img/missigno.png'
 
-const PokeContainer = ({ pokemon, setPokemon, pokeArray, setPokeArray }) => {
+const PokeContainer = ({
+  pokemon,
+  setPokemon,
+  pokeArray,
+  setPokeArray,
+  id,
+  moveId,
+}) => {
   const [selectedPokemon, setSelectedPokemon] = useState(null)
   const [selectedPokemonData, setSelectedPokemonData] = useState()
 
-  // TODO FIGURE OUT UPDATE POKEARRAY STUFF
+  // TODO POKEARRAY STUFF
 
-  // const updatePokeArray = (selectedPokemon) => {
-  //   setPokeArray((pokeArray) => [...pokeArray, selectedPokemon])
-  //   console.log(pokeArray)
+  const updatePokeArray = () => {
+    setPokeArray({
+      ...pokeArray,
+      [id]: {
+        name: selectedPokemon[0].name,
+        moves: { 0: null, 1: null, 2: null, 3: null },
+      },
+    })
+  }
+
+  // const updateMoveArray = () => {
+  //   setPokeArray({
+  //     [id]: {
+  //       name: selectedPokemon[0].name,
+  //       moves: { ...moves, [moveId]: selectedMove },
+  //     },
+  //   })
   // }
 
-  // useEffect(() => {
-  //   if (selectedPokemon) {
-  //     updatePokeArray(selectedPokemon)
-  //   }
-  // }, [selectedPokemon])
+  // first we select a move
+  // grab the move id
+  // call setPokeArray
+  //
+
+  // const updatePokeArray = () => {
+  //   console.log(id)
+  //   setPokeArray((pokeArray) => pokeArray.splice(id, 1, selectedPokemon))
+  // }
 
   useEffect(() => {
-    // updatePokeArray(selectedPokemon)
-    // console.log(`we got a selected pokemon: ${selectedPokemon}`)
-    // console.log(`we got selected pokemon data: ${selectedPokemonData}`)
+    if (selectedPokemon) {
+      console.log(pokeArray)
+    }
+  }, [pokeArray])
+
+  useEffect(() => {
+    if (selectedPokemon) {
+      updatePokeArray()
+    }
   }, [selectedPokemonData])
 
   return (
@@ -52,7 +83,14 @@ const PokeContainer = ({ pokemon, setPokemon, pokeArray, setPokeArray }) => {
         selectedPokemonData={selectedPokemonData}
         setSelectedPokemonData={setSelectedPokemonData}
       />
-      <MoveContainer selectedPokemonData={selectedPokemonData} />
+      <MoveContainer
+        selectedPokemon={selectedPokemon}
+        selectedPokemonData={selectedPokemonData}
+        pokeArray={pokeArray}
+        setPokeArray={setPokeArray}
+        id={id}
+        moveId={moveId}
+      />
       <StatContainer selectedPokemonData={selectedPokemonData} />
     </div>
   )

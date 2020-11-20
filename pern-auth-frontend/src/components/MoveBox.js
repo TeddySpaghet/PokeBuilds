@@ -3,9 +3,12 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
-const MoveBox = ({ selectedPokemonData }) => {
-  const [selectedMove, setSelectedMove] = useState(null)
-
+const MoveBox = ({
+  selectedPokemonData,
+  moveId,
+  selectedMove,
+  setSelectedMove,
+}) => {
   useEffect(() => {}, [selectedPokemonData])
 
   return (

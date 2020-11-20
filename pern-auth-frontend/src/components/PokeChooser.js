@@ -9,18 +9,10 @@ export default function PokeChooser({
   setSelectedPokemon,
   pokeArray,
   setPokeArray,
+  selectedPokemonData,
 }) {
-  // TODO ***TRYING TO FIGURE OUT HOW TO UPDATE POKE ARRAY... MOVED UP TO POKECONTAINER
-  const updatePokeArray = (selectedPokemon) => {
-    setPokeArray((pokeArray) => [...pokeArray, selectedPokemon])
-    console.log(pokeArray)
-  }
 
-  useEffect(() => {
-    if (selectedPokemon) {
-      updatePokeArray(selectedPokemon)
-    }
-  }, [selectedPokemon])
+  
 
   return (
     <div>

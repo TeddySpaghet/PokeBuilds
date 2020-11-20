@@ -11,8 +11,16 @@ const PokeBox = ({
   setSelectedPokemonData,
 }) => {
   // array where individual pokemon are pushed
-  const [pokeArray, setPokeArray] = useState([])
-
+  // const [pokeArray, setPokeArray] = useState([])
+  // *** OBJECT VARIATION
+  const [pokeArray, setPokeArray] = useState({
+    0: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    1: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    2: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    3: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    4: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    5: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+  })
   // team where pokeArray is added
   const exampleTeam = {
     name: 'Team1',
@@ -40,6 +48,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'1'}
+              id={0}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
@@ -49,6 +58,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'2'}
+              id={1}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
@@ -58,6 +68,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'3'}
+              id={2}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
@@ -67,6 +78,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'4'}
+              id={3}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
@@ -76,6 +88,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'5'}
+              id={4}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
@@ -85,6 +98,7 @@ const PokeBox = ({
           <Grid item xs={4}>
             <PokeContainer
               key={'6'}
+              id={5}
               pokemon={pokemon}
               setPokemon={setPokemon}
               pokeArray={pokeArray}
