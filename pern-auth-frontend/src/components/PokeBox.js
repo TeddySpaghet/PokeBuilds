@@ -10,25 +10,20 @@ const PokeBox = ({
   selectedPokemonData,
   setSelectedPokemonData,
 }) => {
-  // TODO DO WE NEED STATE FOR TEAM? OR SHOULD WE JUST PULL TEAM STUFF FROM DATABASE WHENEVER WE RENDER A PREEXISTING TEAM?
-  // const [team, setTeam] = useState()
+  // array where individual pokemon are pushed
+  const [pokeArray, setPokeArray] = useState([])
 
-  // const createTeam = () => {
-  // for numbers 1 to 6
-  // iterate over PokeContainer with key={i}
-  // for each PokeContainer key={i}, grab selectedPokemon
-  // for numbers 1 to 4
-  // iterate over MoveContainer with key={i}
-  // for each MoveContainer key={i}, grab selectedMove
-  // do stuff
+  // team where pokeArray is added
+  const exampleTeam = {
+    name: 'Team1',
+    Description: 'Description',
+    Pokemon: pokeArray,
+    userId: 1,
+  }
+  const [team, setTeam] = useState(exampleTeam)
 
-  //   setTeam({`create team form value`})
-  // }
-
-  // *** END OF TEAM
-
+  // grab full list of Pokemon
   const [pokemon, setPokemon] = useState([])
-
   const getPokemon = () => {
     const P = new Pokedex()
     P.getPokemonsList().then((response) => setPokemon(response.results))
@@ -47,6 +42,8 @@ const PokeBox = ({
               key={'1'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
           <Grid item xs={4}>
@@ -54,6 +51,8 @@ const PokeBox = ({
               key={'2'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
           <Grid item xs={4}>
@@ -61,6 +60,8 @@ const PokeBox = ({
               key={'3'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
           <Grid item xs={4}>
@@ -68,6 +69,8 @@ const PokeBox = ({
               key={'4'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
           <Grid item xs={4}>
@@ -75,6 +78,8 @@ const PokeBox = ({
               key={'5'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
           <Grid item xs={4}>
@@ -82,6 +87,8 @@ const PokeBox = ({
               key={'6'}
               pokemon={pokemon}
               setPokemon={setPokemon}
+              pokeArray={pokeArray}
+              setPokeArray={setPokeArray}
             />
           </Grid>
         </Grid>

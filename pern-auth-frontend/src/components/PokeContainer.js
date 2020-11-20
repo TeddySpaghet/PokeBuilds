@@ -5,14 +5,25 @@ import StatContainer from './StatContainer'
 import PokeData from './PokeData'
 import missingno from '../img/missigno.png'
 
-const PokeContainer = ({ pokemon, setPokemon }) => {
+const PokeContainer = ({ pokemon, setPokemon, pokeArray, setPokeArray }) => {
   const [selectedPokemon, setSelectedPokemon] = useState(null)
   const [selectedPokemonData, setSelectedPokemonData] = useState()
 
+  // TODO FIGURE OUT UPDATE POKEARRAY STUFF
+
+  // const updatePokeArray = (selectedPokemon) => {
+  //   setPokeArray((pokeArray) => [...pokeArray, selectedPokemon])
+  //   console.log(pokeArray)
+  // }
+
+  // useEffect(() => {
+  //   if (selectedPokemon) {
+  //     updatePokeArray(selectedPokemon)
+  //   }
+  // }, [selectedPokemon])
+
   useEffect(() => {
-    if (selectedPokemonData) {
-      console.log(`********** ${selectedPokemonData}`)
-    }
+    // updatePokeArray(selectedPokemon)
     // console.log(`we got a selected pokemon: ${selectedPokemon}`)
     // console.log(`we got selected pokemon data: ${selectedPokemonData}`)
   }, [selectedPokemonData])
@@ -33,6 +44,8 @@ const PokeContainer = ({ pokemon, setPokemon }) => {
         pokemon={pokemon}
         selectedPokemon={selectedPokemon}
         setSelectedPokemon={setSelectedPokemon}
+        pokeArray={pokeArray}
+        setPokeArray={setPokeArray}
       />
       <PokeData
         selectedPokemon={selectedPokemon}
