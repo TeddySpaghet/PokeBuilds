@@ -7,57 +7,55 @@ const MoveContainer = ({
   pokeArray,
   setPokeArray,
   id,
-  moveId,
-  movesObj,
-  setMovesObj,
 }) => {
+  const [movesObj, setMovesObj] = useState({
+    0: null,
+    1: null,
+    2: null,
+    3: null,
+  })
+
   const [selectedMove, setSelectedMove] = useState(null)
 
+  // useEffect(() => {}, [selectedPokemon])
 
-  const updateMoveObj = () => {
-    setMovesObj({
-      ...movesObj,
-      [moveId]: selectedMove,
-    })
-    console.log(movesObj)
-  }
-
-  useEffect(() => {
-    if (selectedMove) {
-      updateMoveObj()
-    }
-  }, [selectedMove])
-
-  useEffect(() => {}, [selectedPokemon])
   return (
     <div>
       <MoveBox
-        key={1}
+        key={'1'}
         moveId={0}
         selectedPokemonData={selectedPokemonData}
         selectedMove={selectedMove}
         setSelectedMove={setSelectedMove}
+        movesObj={movesObj}
+        setMovesObj={setMovesObj}
       />
       <MoveBox
-        key={2}
+        key={'2'}
         moveId={1}
         selectedPokemonData={selectedPokemonData}
         selectedMove={selectedMove}
         setSelectedMove={setSelectedMove}
+        movesObj={movesObj}
+        setMovesObj={setMovesObj}
       />
       <MoveBox
-        key={3}
+        key={'3'}
         moveId={2}
         selectedPokemonData={selectedPokemonData}
         selectedMove={selectedMove}
         setSelectedMove={setSelectedMove}
+        movesObj={movesObj}
+        setMovesObj={setMovesObj}
       />
       <MoveBox
-        key={4}
+        key={'4'}
         moveId={3}
         selectedPokemonData={selectedPokemonData}
         selectedMove={selectedMove}
         setSelectedMove={setSelectedMove}
+        movesObj={movesObj}
+        setMovesObj={setMovesObj}
       />
     </div>
   )

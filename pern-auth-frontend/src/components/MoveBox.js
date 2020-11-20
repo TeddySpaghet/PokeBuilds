@@ -8,8 +8,22 @@ const MoveBox = ({
   moveId,
   selectedMove,
   setSelectedMove,
+  movesObj,
+  setMovesObj,
 }) => {
-  useEffect(() => {}, [selectedPokemonData])
+  const updateMoveObj = () => {
+    console.log(movesObj)
+    setMovesObj({
+      ...movesObj,
+      [moveId]: selectedMove,
+    })
+  }
+
+  useEffect(() => {
+    if (selectedMove) {
+      updateMoveObj()
+    }
+  }, [selectedMove])
 
   return (
     <div>
