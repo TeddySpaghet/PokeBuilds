@@ -16,9 +16,10 @@ const MoveBox = ({
       {selectedPokemonData ? (
         <Autocomplete
           onChange={(event, value) =>
-            setSelectedMove([
-              selectedPokemonData.moves.find((x) => value === x.name),
-            ])
+            setSelectedMove(
+              selectedPokemonData.moves.find((x) => value === x.move.name).move
+                .name
+            )
           }
           // id='combo-box-demo'
           options={selectedPokemonData.moves.map((x) => x.move.name)}

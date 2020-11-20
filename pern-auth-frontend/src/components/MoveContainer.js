@@ -8,23 +8,23 @@ const MoveContainer = ({
   setPokeArray,
   id,
   moveId,
+  movesObj,
+  setMovesObj,
 }) => {
   const [selectedMove, setSelectedMove] = useState(null)
 
-  const updateMoveArray = () => {
-    console.log(selectedPokemon)
-    setPokeArray({
-      ...pokeArray,
-      [id]: {
-        name: selectedPokemon[0].name,
-        moves: { ...this.moves, [moveId]: selectedMove },
-      },
+
+  const updateMoveObj = () => {
+    setMovesObj({
+      ...movesObj,
+      [moveId]: selectedMove,
     })
+    console.log(movesObj)
   }
 
   useEffect(() => {
     if (selectedMove) {
-      updateMoveArray()
+      updateMoveObj()
     }
   }, [selectedMove])
 

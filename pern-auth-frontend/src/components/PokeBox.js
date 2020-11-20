@@ -13,13 +13,15 @@ const PokeBox = ({
   // array where individual pokemon are pushed
   // const [pokeArray, setPokeArray] = useState([])
   // *** OBJECT VARIATION
+
+
   const [pokeArray, setPokeArray] = useState({
-    0: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
-    1: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
-    2: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
-    3: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
-    4: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
-    5: { name: null, moves: { 0: null, 1: null, 2: null, 3: null } },
+    0: { name: null, moves: {} },
+    1: { name: null, moves: {} },
+    2: { name: null, moves: {} },
+    3: { name: null, moves: {} },
+    4: { name: null, moves: {} },
+    5: { name: null, moves: {} },
   })
   // team where pokeArray is added
   const exampleTeam = {

@@ -18,12 +18,19 @@ const PokeContainer = ({
 
   // TODO POKEARRAY STUFF
 
+  const [movesObj, setMovesObj] = useState({
+    0: null,
+    1: null,
+    2: null,
+    3: null,
+  })
+
   const updatePokeArray = () => {
     setPokeArray({
       ...pokeArray,
       [id]: {
         name: selectedPokemon[0].name,
-        moves: { 0: null, 1: null, 2: null, 3: null },
+        moves: { movesObj },
       },
     })
   }
@@ -90,6 +97,8 @@ const PokeContainer = ({
         setPokeArray={setPokeArray}
         id={id}
         moveId={moveId}
+        movesObj={movesObj}
+        setMovesObj={setMovesObj}
       />
       <StatContainer selectedPokemonData={selectedPokemonData} />
     </div>
