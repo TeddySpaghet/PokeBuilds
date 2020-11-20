@@ -3,25 +3,21 @@ import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import Pokedex from 'pokedex-promise-v2'
 
-const MoveBox = ({
-  selectedPokemonData,
-  moveId,
-  selectedMove,
-  setSelectedMove,
-  movesObj,
-  setMovesObj,
-}) => {
+const MoveBox = ({ selectedPokemonData, moveId, movesObj, setMovesObj }) => {
   const updateMoveObj = () => {
-    console.log(movesObj)
+    console.log(moveId)
     setMovesObj({
       ...movesObj,
       [moveId]: selectedMove,
     })
   }
 
+  const [selectedMove, setSelectedMove] = useState(null)
+
   useEffect(() => {
     if (selectedMove) {
       updateMoveObj()
+      console.log(movesObj)
     }
   }, [selectedMove])
 
