@@ -12,7 +12,6 @@ const PokeData = ({
       P.getPokemonByName(selectedPokemon[0].name).then((response) =>
         setSelectedPokemonData(response)
       )
-      console.log('this is running right now!!!!')
     }
   }
 

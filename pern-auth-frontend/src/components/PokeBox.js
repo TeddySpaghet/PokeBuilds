@@ -10,11 +10,6 @@ const PokeBox = ({
   selectedPokemonData,
   setSelectedPokemonData,
 }) => {
-  // array where individual pokemon are pushed
-  // const [pokeArray, setPokeArray] = useState([])
-  // *** OBJECT VARIATION
-
-
   const [pokeArray, setPokeArray] = useState({
     0: { name: null, moves: {} },
     1: { name: null, moves: {} },
@@ -30,6 +25,7 @@ const PokeBox = ({
     Pokemon: pokeArray,
     userId: 1,
   }
+  
   const [team, setTeam] = useState(exampleTeam)
 
   // grab full list of Pokemon
