@@ -14,6 +14,7 @@ const MoveBox = ({
   setPokeArray,
 }) => {
   const updateMovesObj = () => {
+    console.log(moveId)
     setMovesObj({
       ...movesObj,
       [moveId]: selectedMove,
@@ -42,7 +43,6 @@ const MoveBox = ({
   useEffect(() => {
     if (selectedMove && movesObj) {
       addMovesObjToPokeArray()
-      // console.log(pokeArray)
     }
   }, [movesObj])
 

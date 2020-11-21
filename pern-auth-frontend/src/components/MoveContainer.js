@@ -9,10 +9,10 @@ const MoveContainer = ({
   id,
 }) => {
   const [movesObj, setMovesObj] = useState({
-    0: null,
-    1: null,
-    2: null,
-    3: null,
+    move0: null,
+    move1: null,
+    move2: null,
+    move3: null,
   })
   // useEffect(() => {}, [selectedPokemon])
 
@@ -20,7 +20,7 @@ const MoveContainer = ({
     <div>
       <MoveBox
         key={'1'}
-        moveId={'0'}
+        moveId={'move0'}
         id={id}
         selectedPokemon={selectedPokemon}
         selectedPokemonData={selectedPokemonData}
@@ -31,7 +31,7 @@ const MoveContainer = ({
       />
       <MoveBox
         key={'2'}
-        moveId={'1'}
+        moveId={'move1'}
         id={id}
         selectedPokemon={selectedPokemon}
         selectedPokemonData={selectedPokemonData}
@@ -42,7 +42,7 @@ const MoveContainer = ({
       />
       <MoveBox
         key={'3'}
-        moveId={'2'}
+        moveId={'move2'}
         id={id}
         selectedPokemon={selectedPokemon}
         selectedPokemonData={selectedPokemonData}
@@ -53,7 +53,7 @@ const MoveContainer = ({
       />
       <MoveBox
         key={'4'}
-        moveId={'3'}
+        moveId={'move3'}
         id={id}
         selectedPokemon={selectedPokemon}
         selectedPokemonData={selectedPokemonData}
