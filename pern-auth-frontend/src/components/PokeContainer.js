@@ -36,36 +36,13 @@ const PokeContainer = ({
 
   return (
     <div>
-      <h1>{selectedPokemonData ? selectedPokemonData.name : 'missingno'}</h1>
-      <img
-        src={
-          selectedPokemonData
-            ? selectedPokemonData.sprites.front_default
-            : missingno
-        }
-        alt='missingno'
-      />
+      <h1></h1>
+      <img src={missingno} alt='missingno' />
       {/* <Button>{single page link}</Button> */}
-      <PokeChooser
-        pokemon={pokemon}
-        selectedPokemon={selectedPokemon}
-        setSelectedPokemon={setSelectedPokemon}
-        pokeArray={pokeArray}
-        setPokeArray={setPokeArray}
-      />
-      <PokeData
-        selectedPokemon={selectedPokemon}
-        selectedPokemonData={selectedPokemonData}
-        setSelectedPokemonData={setSelectedPokemonData}
-      />
-      <MoveContainer
-        selectedPokemon={selectedPokemon}
-        selectedPokemonData={selectedPokemonData}
-        pokeArray={pokeArray}
-        setPokeArray={setPokeArray}
-        id={id}
-      />
-      <StatContainer selectedPokemonData={selectedPokemonData} />
+      <PokeChooser id={id} />
+      <PokeData />
+      <MoveContainer id={id} />
+      {/* <StatContainer selectedPokemonData={selectedPokemonData} /> */}
     </div>
   )
 }
