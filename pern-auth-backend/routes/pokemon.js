@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const passport = require('../passport')
-const team = require('../controllers/team')
+const pokemon = require('../controllers/pokemon')
 
-router.post('/createteam', team.create)
+router.post('/createpokemon', pokemon.create)
 
 module.exports = router

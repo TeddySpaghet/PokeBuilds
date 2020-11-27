@@ -7,12 +7,12 @@
     "dialect": "postgres"
   },
   "test": {
-    "database": "DB NAME HERE",
+    "database": "pokebuilds",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "DB NAME HERE",
+    "database": "pokebuilds",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }

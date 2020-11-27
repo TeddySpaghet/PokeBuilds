@@ -5,14 +5,17 @@ const create = (req, res) => {
   const { teamName, teamDescription } = req.body
 
   // validate the POSTed data - making sure we have a name, an email, a p
-  db.team
+  db.pokemon
     .create({
-      teamName,
-      teamDescription,
+      name,
+      move0,
+      move1,
+      move2,
+      move3,
     })
-    .then((newTeam) => {
-      console.log('New team created!')
-      res.json(newTeam)
+    .then((newPokemon) => {
+      console.log('New pokemon created!')
+      res.json(newPokemon)
     })
 }
 
