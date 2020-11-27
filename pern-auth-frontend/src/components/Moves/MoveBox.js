@@ -1,22 +1,17 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React from 'react'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
-import { PokedexContext } from '../Contexts/PokedexContext'
 
-const MoveBox = ({ id, moveId, pokemon, setPokemon }) => {
-  const [pokedex] = useContext(PokedexContext)
-  const [moves, setMoves] = useState([])
-
+const MoveBox = ({ id, moveId, pokemon, setPokemon, moves, setMoves }) => {
   const chooseMove = (move) => {
-    setMoves(...moves, (move[moveId]: move))
-    //TODO setPokemon
+    setMoves({ ...moves, [`move${moveId}`]: move })
   }
 
   return (
     <div>
       {pokemon ? (
         <Autocomplete
-          onChange={(event, value) => chooseMove(value.name)}
+          onChange={(event, value) => chooseMove(value.move.name)}
           // id='combo-box-demo'
           options={pokemon.moves}
           getOptionLabel={(option) => option.move.name}

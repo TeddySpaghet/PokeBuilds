@@ -1,22 +1,21 @@
 /* eslint-disable no-use-before-define */
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import TextField from '@material-ui/core/TextField'
 import Autocomplete from '@material-ui/lab/Autocomplete'
 import { PokedexContext } from '../Contexts/PokedexContext'
 const axios = require('axios')
 
-export default function PokeChooser({ id, setPokemon }) {
+export default function PokeChooser({ id, pokemon, setPokemon }) {
   const [pokedex] = useContext(PokedexContext)
 
   const getPokemon = (x) => {
-    console.log(x)
     axios
       .get('https://pokeapi.co/api/v2/pokemon/' + x)
       .then((res) => setPokemon(res.data))
   }
 
   return (
-    <div>
+    <React.Fragment>
       {pokedex ? (
         <Autocomplete
           onChange={(event, value) => getPokemon(value.name)}
@@ -30,6 +29,6 @@ export default function PokeChooser({ id, setPokemon }) {
       ) : (
         ''
       )}
-    </div>
+    </React.Fragment>
   )
 }

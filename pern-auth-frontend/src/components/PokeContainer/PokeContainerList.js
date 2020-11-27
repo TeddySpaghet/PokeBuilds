@@ -1,12 +1,12 @@
 import React from 'react'
 import PokeContainer from './PokeContainer'
 
-function PokeContainerList({ id }) {
-  const pokemon = [1, 2, 3, 4, 5, 6]
-  const pokemonList = pokemon.map((item, index) => {
+function PokeContainerList() {
+  const numPokemon = [1, 2, 3, 4, 5, 6]
+  const pokemonList = numPokemon.map((item, index) => {
     return <PokeContainer key={index} id={index} />
   })
-  return <div>{pokemonList}</div>
+  return <React.Fragment>{pokemonList}</React.Fragment>
 }
 
 export default PokeContainerList

@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react'
 
-const StatBox = ({ stat, index, selectedPokemonData }) => {
-  useEffect(() => {}, [selectedPokemonData])
+const StatBox = ({ stat, index, pokemon }) => {
+  useEffect(() => {}, [pokemon])
   return (
-    <div>
-      {selectedPokemonData ? (
+    <React.Fragment>
+      {pokemon ? (
         <div>
           <p>{stat}</p>
-          <p>{selectedPokemonData.stats[index].base_stat}</p>
+          <p>{pokemon.stats[index].base_stat}</p>
         </div>
       ) : (
         ''
       )}
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -1,24 +1,30 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PokeChooser from './PokeChooser'
 import MoveList from '../Moves/MoveList'
-import StatContainer from '../Stats/StatContainer'
+import StatList from '../Stats/StatList'
 import missingno from '../../img/missigno.png'
-import Pokedex from 'pokedex-promise-v2'
+import { TeamContext } from '../Contexts/TeamContext'
 
 const PokeContainer = ({ id }) => {
-  const P = new Pokedex()
-
   const [pokemon, setPokemon] = useState()
-  const [pokemonData, setPokemonData] = useState()
+
+  const [team, setTeam] = useContext(TeamContext)
+
+  useEffect(() => {
+    console.log('come on man!')
+    if (pokemon) {
+      setTeam({ ...team, [`pokemon${id}`]: pokemon.name })
+    }
+  }, [pokemon])
 
   return (
-    <div>
-      <h1></h1>
+    <React.Fragment>
+      <h1>{pokemon ? pokemon.name : 'missingno'}</h1>
       <img src={missingno} alt='missingno' />
       <PokeChooser id={id} setPokemon={setPokemon} />
       <MoveList id={id} pokemon={pokemon} />
-      <StatContainer id={id} pokemon={pokemon} />
-    </div>
+      <StatList id={id} pokemon={pokemon} />
+    </React.Fragment>
   )
 }
 
