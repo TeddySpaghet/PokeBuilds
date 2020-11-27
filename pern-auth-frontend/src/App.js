@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/UI/Header'
+import Footer from './components/UI/Footer'
 import PokeBox from './components/PokeBox'
 import Routes from './config/Routes'
 import './App.css'

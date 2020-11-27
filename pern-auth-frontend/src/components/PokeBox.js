@@ -1,111 +1,43 @@
-import React, { useState, useEffect } from 'react'
-import { Grid, Button } from '@material-ui/core'
-// import MoveBox from './MoveBox'
-import Pokedex from 'pokedex-promise-v2'
-import PokeContainer from './PokeContainer'
+import React, { useState, useContext } from 'react'
+import TeamModel from '../models/team'
+import { Button } from '@material-ui/core'
+import PokeContainerList from './PokeContainer/PokeContainerList'
+import { TeamContext } from './Contexts/TeamContext'
+import { TeamProvider } from './Contexts/TeamContext'
+import { PokedexProvider } from './Contexts/PokedexContext'
 
-const PokeBox = ({
-  selectedPokemon,
-  setSelectedPokemon,
-  selectedPokemonData,
-  setSelectedPokemonData,
-}) => {
-  const [pokeArray, setPokeArray] = useState({
-    0: { name: null, moves: {} },
-    1: { name: null, moves: {} },
-    2: { name: null, moves: {} },
-    3: { name: null, moves: {} },
-    4: { name: null, moves: {} },
-    5: { name: null, moves: {} },
-  })
-  // team where pokeArray is added
-  const exampleTeam = {
-    name: 'Team1',
-    Description: 'Description',
-    Pokemon: pokeArray,
-    userId: 1,
+// TODO Build Team Function:
+
+const PokeBox = (props) => {
+  // const [team] = useContext(TeamContext)
+
+  const [teamName, setTeamName] = useState('')
+  const [teamDescription, setTeamDescription] = useState('')
+
+  const handleTeamName = (e) => {
+    setTeamName(e.target.value)
   }
-  
-  const [team, setTeam] = useState(exampleTeam)
-
-  // grab full list of Pokemon
-  const [pokemon, setPokemon] = useState([])
-  const getPokemon = () => {
-    const P = new Pokedex()
-    P.getPokemonsList().then((response) => setPokemon(response.results))
+  const handleTeamDescription = (e) => {
+    setTeamDescription(e.target.value)
   }
 
-  useEffect(() => {
-    getPokemon()
-  }, [])
+  const handleSubmit = (e) => {
+    e.preventDefault()
 
+    if (true) {
+      TeamModel.create({ teamName, teamDescription }).then((data) => {
+        console.log('Successful team creation', data)
+      })
+    }
+  }
   return (
     <div>
-      <Grid container spacing={10}>
-        <Grid container item xs={12} spacing={3}>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'1'}
-              id={0}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'2'}
-              id={1}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'3'}
-              id={2}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'4'}
-              id={3}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'5'}
-              id={4}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-          <Grid item xs={4}>
-            <PokeContainer
-              key={'6'}
-              id={5}
-              pokemon={pokemon}
-              setPokemon={setPokemon}
-              pokeArray={pokeArray}
-              setPokeArray={setPokeArray}
-            />
-          </Grid>
-        </Grid>
-        <Button>Create Team</Button>
-      </Grid>
+      <TeamProvider>
+        <PokedexProvider>
+          <PokeContainerList />
+          <Button onClick={handleSubmit}>Create Team</Button>
+        </PokedexProvider>
+      </TeamProvider>
     </div>
   )
 }
