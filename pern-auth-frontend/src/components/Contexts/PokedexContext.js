@@ -6,12 +6,11 @@ export const PokedexContext = createContext()
 
 export const PokedexProvider = ({ children }) => {
   const [pokedex, setPokedex] = useState([])
-
   const P = new Pokedex()
   P.getPokemonsList().then((response) => setPokedex(response.results))
 
   return (
-    <PokedexContext.Provider value={pokedex}>
+    <PokedexContext.Provider value={[pokedex]}>
       {children}
     </PokedexContext.Provider>
   )
