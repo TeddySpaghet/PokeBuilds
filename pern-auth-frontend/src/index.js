@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import App from './App'
 
-import PokeBox from './components/PokeBox'
-
 ReactDOM.render(
   // StrictMode is a tool for highlighting potential
   // problems in an application. Like Fragment,
