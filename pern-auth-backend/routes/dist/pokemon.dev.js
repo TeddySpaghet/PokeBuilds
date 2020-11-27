@@ -4,7 +4,7 @@ var router = require('express').Router();
 
 var passport = require('../passport');
 
-var team = require('../controllers/team');
+var pokemon = require('../controllers/pokemon');
 
-router.post('/createteam', team.create);
+router.post('/createpokemon', pokemon.create);
 module.exports = router;
