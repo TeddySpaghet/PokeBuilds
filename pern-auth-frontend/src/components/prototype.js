@@ -2,7 +2,7 @@ import React from 'react'
 
 // for a single pokemon
 
-const pokeContainer = () => {
+const PokeContainer = () => {
     // state logic
     // selectedPokemon
     // setMoves
@@ -13,7 +13,7 @@ const pokeContainer = () => {
         <h1>{name}</h1>
         <img src={image} alt=""/>
         <Button>{single page link}</Button>
-        <PokemonChooser pokemon={pokemon}>
+        <PokemonChooser pokemon={pokemon}/>
         <MoveContainer moves={moves}/>
         <StatContainer stats={stats}/>
 
@@ -22,4 +22,4 @@ const pokeContainer = () => {
     )
 }
 
-export default pokecontainer
+export default PokeContainer

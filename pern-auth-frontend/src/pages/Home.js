@@ -1,11 +1,12 @@
-import React from 'react';
+import React from 'react'
+import pokebuilds from '../img/pokebuilds.png'
 
 const Home = () => {
   return (
     <div>
-      <h1>Welcome to PERN Auth</h1>
+      <img src={pokebuilds} alt='' />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home
