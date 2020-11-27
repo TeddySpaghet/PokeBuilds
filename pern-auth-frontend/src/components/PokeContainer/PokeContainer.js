@@ -11,17 +11,13 @@ const PokeContainer = ({ id }) => {
   const [pokemon, setPokemon] = useState()
   const [pokemonData, setPokemonData] = useState()
 
-  useEffect(() => {
-    P.getPokemonByName(pokemon).then((response) => setPokemonData(response))
-  }, [pokemon])
-
   return (
     <div>
       <h1></h1>
       <img src={missingno} alt='missingno' />
-      <PokeChooser id={id} />
-      <MoveList id={id} />
-      <StatContainer id={id} />
+      <PokeChooser id={id} setPokemon={setPokemon} />
+      <MoveList id={id} pokemon={pokemon} />
+      <StatContainer id={id} pokemon={pokemon} />
     </div>
   )
 }
