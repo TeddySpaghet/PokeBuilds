@@ -5,6 +5,7 @@ import { TeamContext } from './Contexts/TeamContext'
 import { TeamProvider } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
+import { Grid } from '@material-ui/core'
 
 // TODO Build Team Function:
 
@@ -31,16 +32,18 @@ const PokeBox = (props) => {
       console.log('Successful team creation', data)
     })
 
-    for (let i in pokemon) {
-      PokemonModel.create()
-      // associate pokemon with TeamModel
-    }
-  }
+  //   for (let i in pokemon) {
+  //     PokemonModel.create()
+  //     // associate pokemon with TeamModel
+  //   }
+   }
   return (
     <div>
       <TeamProvider>
         <PokedexProvider>
-          <PokeContainerList />
+          <Grid>
+            <PokeContainerList />
+          </Grid>
           <form onSubmit={handleSubmit}>
             <input
               type='text'

@@ -4,6 +4,7 @@ import MoveList from '../Moves/MoveList'
 import StatList from '../Stats/StatList'
 import missingno from '../../img/missigno.png'
 import { TeamContext } from '../Contexts/TeamContext'
+import './PokeContainer.scss'
 
 const PokeContainer = ({ id }) => {
   const [pokemon, setPokemon] = useState()
@@ -19,11 +20,19 @@ const PokeContainer = ({ id }) => {
 
   return (
     <React.Fragment>
-      <h1>{pokemon ? pokemon.name : 'missingno'}</h1>
-      <img src={missingno} alt='missingno' />
-      <PokeChooser id={id} setPokemon={setPokemon} />
-      <MoveList id={id} pokemon={pokemon} />
-      <StatList id={id} pokemon={pokemon} />
+      <article className="poke-container">
+        <span className="poke-header">
+          <h1>{pokemon ? pokemon.name : 'missingno'}</h1>
+          <img src={missingno} alt='missingno' />
+        </span>
+        <PokeChooser id={id} setPokemon={setPokemon} />
+        <div className="poke-movelist">
+          <MoveList id={id} pokemon={pokemon} />
+        </div>
+        <div className="poke-statlist">
+          <StatList id={id} pokemon={pokemon} />
+        </div>
+      </article>
     </React.Fragment>
   )
 }
