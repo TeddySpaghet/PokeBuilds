@@ -30,10 +30,14 @@ function () {
     //   return fetch(`${REACT_APP_API_URL}/pokemon`).then((res) => res.json())
     // }
     value: function create(data) {
-      return _axios["default"].post("".concat(REACT_APP_API_URL, "/pokemon/createpokemon"), data).then(function (response) {
-        console.log(response);
-      })["catch"](function (error) {
-        console.log(error);
+      return fetch("".concat(REACT_APP_API_URL, "/pokemon/createpokemon"), {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(function (res) {
+        return res.json();
       });
     }
   }]);

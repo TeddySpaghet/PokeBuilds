@@ -5,40 +5,19 @@ import PokeContainerList from './PokeContainer/PokeContainerList'
 import { TeamProvider } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
+import { MockTeam } from './MockTeam'
 
 // TODO Build Team Function:
 
 const PokeBox = (props) => {
+  // ***REAL DATA
   // const [team] = useContext(TeamContext)
-  const [team] = useState({
-    pokemon0: {
-      name: 'bulbasaur',
-      moves: { move0: 'razor-wind' },
-    },
-    // pokemon1: {
-    //   name: 'ivysaur',
-    //   moves: { move0: 'growl' },
-    // },
-    // pokemon2: {
-    //   name: 'venonat',
-    //   moves: { move0: 'mimic' },
-    // },
-    // pokemon3: {
-    //   name: 'parasect',
-    //   moves: { move0: 'protect' },
-    // },
-    // pokemon4: {
-    //   name: 'poliwag',
-    //   moves: { move0: 'blizzard' },
-    // },
-    // pokemon5: {
-    //   name: 'tentacruel',
-    //   moves: { move0: 'round' },
-    // },
-  })
 
-  const [teamName, setTeamName] = useState('')
-  const [teamDescription, setTeamDescription] = useState('')
+  // *** MOCK DATA FOR TESTING
+  const [team] = useState(MockTeam)
+
+  const [teamName, setTeamName] = useState('wow')
+  const [teamDescription, setTeamDescription] = useState('ok')
 
   const handleTeamName = (e) => {
     setTeamName(e.target.value)
@@ -50,24 +29,28 @@ const PokeBox = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    // todo find teammodel, if none, then create
+
     TeamModel.create({
       teamName,
       teamDescription,
+      team,
     }).then((data) => {
       console.log('Successful team creation', data)
+      // console.log(data.id)
+      // for (let i in team) {
+      //   PokemonModel.create({
+      //     name: team[i].name,
+      //     move0: team[i].moves.move0,
+      //     move1: team[i].moves.move1,
+      //     move2: team[i].moves.move2,
+      //     move3: team[i].moves.move3,
+      //     teamId: data.id,
+      //   }).then((data) => {
+      //     console.log('Successful pokemon creation', data)
+      //   })
+      // }
     })
-    for (let i in team) {
-      PokemonModel.create({
-        name: team[i].name,
-        move0: team[i].moves.move0,
-        move1: team[i].moves.move1,
-        move2: team[i].moves.move2,
-        move3: team[i].moves.move3,
-        teamName: teamName,
-      }).then((data) => {
-        console.log('Successful pokemon creation', data)
-      })
-    }
   }
   return (
     <div>
