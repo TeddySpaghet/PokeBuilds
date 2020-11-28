@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import TeamModel from '../models/team'
 import PokeContainerList from './PokeContainer/PokeContainerList'
-// import { TeamContext } from './Contexts/TeamContext'
+import { TeamContext } from './Contexts/TeamContext'
 import { TeamProvider } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
@@ -10,11 +10,9 @@ import { MockTeam } from './MockTeam'
 // TODO Build Team Function:
 
 const PokeBox = (props) => {
-  // ***REAL DATA
-  // const [team] = useContext(TeamContext)
-
-  // *** MOCK DATA FOR TESTING
-  const [team] = useState(MockTeam)
+  // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
+  const [team] = useContext(TeamContext) // to use user inputted real data
+  // const [team] = useState(MockTeam) // to use mock data
 
   const [teamName, setTeamName] = useState('wow')
   const [teamDescription, setTeamDescription] = useState('ok')
