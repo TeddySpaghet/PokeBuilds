@@ -54,7 +54,8 @@ module.exports = function (sequelize, DataTypes) {
     move0: DataTypes.STRING,
     move1: DataTypes.STRING,
     move2: DataTypes.STRING,
-    move3: DataTypes.STRING
+    move3: DataTypes.STRING,
+    teamId: DataTypes.INTEGER
   }, {
     sequelize: sequelize,
     modelName: 'pokemon'

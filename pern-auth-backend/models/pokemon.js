@@ -12,17 +12,20 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
-  pokemon.init({
-    name: DataTypes.STRING,
-    move0: DataTypes.STRING,
-    move1: DataTypes.STRING,
-    move2: DataTypes.STRING,
-    move3: DataTypes.STRING,
-    teamName: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'pokemon',
-  });
-  return pokemon;
-};
+  }
+  pokemon.init(
+    {
+      name: DataTypes.STRING,
+      move0: DataTypes.STRING,
+      move1: DataTypes.STRING,
+      move2: DataTypes.STRING,
+      move3: DataTypes.STRING,
+      teamId: DataTypes.INTEGER,
+    },
+    {
+      sequelize,
+      modelName: 'pokemon',
+    }
+  )
+  return pokemon
+}

@@ -48,7 +48,7 @@ app.use(passport.session())
 
 // middleware - API routes
 app.use('/api/v1/auth', auth)
-app.use('/api/v1/team', team)
+app.use('/api/v1/teams', team)
 app.use('/api/v1/pokemon', pokemon)
 
 // connection

@@ -51,7 +51,8 @@ module.exports = function (sequelize, DataTypes) {
 
   team.init({
     teamName: DataTypes.STRING,
-    teamDescription: DataTypes.TEXT
+    teamDescription: DataTypes.TEXT,
+    userId: DataTypes.INTEGER
   }, {
     sequelize: sequelize,
     modelName: 'team'

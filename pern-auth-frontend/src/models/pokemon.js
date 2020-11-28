@@ -7,13 +7,12 @@ export default class PokemonModel {
   // }
 
   static create(data) {
-    return axios
-      .post(`${REACT_APP_API_URL}/pokemon/createpokemon`, data)
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
+    return fetch(`${REACT_APP_API_URL}/pokemon/createpokemon`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json())
   }
 }

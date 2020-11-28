@@ -1,22 +1,24 @@
 const db = require('../models')
 
-const create = (req, res) => {
-  console.log("let's go baby")
-  const { teamName, teamDescription } = req.body
-
-  // validate the POSTed data - making sure we have a name, an email, a p
-  db.pokemon
-    .create({
+const create = async (req, res) => {
+  try {
+    const { name, move0, move1, move2, move3, teamId } = await req.body
+    // validate the POSTed data - making sure we have a name, an email, a p
+    const pokemon = await db.pokemon.create({
       name,
       move0,
       move1,
       move2,
       move3,
+      teamId,
     })
-    .then((newPokemon) => {
-      console.log('New pokemon created!')
-      res.json(newPokemon)
+    const team = await db.team.findOne({
+      where: { id: teamId },
     })
+    await team.addPokemon(pokemon)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 module.exports = {

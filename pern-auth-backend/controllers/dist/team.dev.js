@@ -2,21 +2,95 @@
 
 var db = require('../models');
 
-var create = function create(req, res) {
-  console.log("let's go baby");
-  var _req$body = req.body,
-      teamName = _req$body.teamName,
-      teamDescription = _req$body.teamDescription; // validate the POSTed data - making sure we have a name, an email, a p
+var chalk = require('chalk');
 
-  db.team.create({
-    teamName: teamName,
-    teamDescription: teamDescription
-  }).then(function (newTeam) {
-    console.log('New team created!');
-    res.json(newTeam);
+var index = function index(req, res) {
+  db.team.findAll().then(function (foundTeams) {
+    if (!foundTeams) return res.json({
+      message: 'No Teams found in database.'
+    }); // respond with a JSON-ified object of users
+
+    res.json({
+      teams: foundTeams
+    });
+  })["catch"](function (err) {
+    return console.log('Error at teams#index', err);
+  });
+};
+
+var create = function create(req, res) {
+  var _req$body, teamName, teamDescription, team, preexistingTeam, createdTeam, i, createdPokemon;
+
+  return regeneratorRuntime.async(function create$(_context) {
+    while (1) {
+      switch (_context.prev = _context.next) {
+        case 0:
+          _req$body = req.body, teamName = _req$body.teamName, teamDescription = _req$body.teamDescription, team = _req$body.team;
+          _context.next = 3;
+          return regeneratorRuntime.awrap(db.team.findOne({
+            where: {
+              teamName: teamName
+            }
+          }));
+
+        case 3:
+          preexistingTeam = _context.sent;
+
+          if (!preexistingTeam) {
+            _context.next = 6;
+            break;
+          }
+
+          return _context.abrupt("return", res.json({
+            message: 'A team with that name already exists'
+          }));
+
+        case 6:
+          _context.next = 8;
+          return regeneratorRuntime.awrap(db.team.create({
+            teamName: teamName,
+            teamDescription: teamDescription
+          }));
+
+        case 8:
+          createdTeam = _context.sent;
+          _context.t0 = regeneratorRuntime.keys(team);
+
+        case 10:
+          if ((_context.t1 = _context.t0()).done) {
+            _context.next = 17;
+            break;
+          }
+
+          i = _context.t1.value;
+          _context.next = 14;
+          return regeneratorRuntime.awrap(db.pokemon.create({
+            name: team[i].name,
+            move0: team[i].moves.move0,
+            move1: team[i].moves.move1,
+            move2: team[i].moves.move2,
+            move3: team[i].moves.move3,
+            teamId: createdTeam.id
+          }));
+
+        case 14:
+          createdPokemon = _context.sent;
+          _context.next = 10;
+          break;
+
+        case 17:
+          _context.next = 19;
+          return regeneratorRuntime.awrap(console.log('New team created!'));
+
+        case 19:
+        case "end":
+          return _context.stop();
+      }
+    }
   });
 };
 
 module.exports = {
-  create: create
+  create: create,
+  index: index
 };
