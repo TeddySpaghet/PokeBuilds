@@ -42,7 +42,9 @@ module.exports = function (sequelize, DataTypes) {
        * The `models/index` file will call this method automatically.
        */
       value: function associate(models) {
-        models.team.hasMany(models.pokemon);
+        models.team.hasMany(models.pokemon, {
+          as: 'teamName'
+        });
       }
     }]);
 
@@ -51,7 +53,8 @@ module.exports = function (sequelize, DataTypes) {
 
   team.init({
     teamName: DataTypes.STRING,
-    teamDescription: DataTypes.TEXT
+    teamDescription: DataTypes.TEXT,
+    userId: DataTypes.INTEGER
   }, {
     sequelize: sequelize,
     modelName: 'team'

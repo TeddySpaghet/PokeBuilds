@@ -5,6 +5,7 @@ import PokeBox from './components/PokeBox'
 import Routes from './config/Routes'
 import './App.css'
 import UserModel from './models/user'
+import { TeamProvider } from './components/Contexts/TeamContext'
 
 function App() {
   const [currentUser, setCurrentUser] = useState(localStorage.getItem('id'))
@@ -28,7 +29,9 @@ function App() {
     <div className='App'>
       <Header currentUser={currentUser} logout={logout} />
       <Routes currentUser={currentUser} storeUser={storeUser} />
-      <PokeBox />
+      <TeamProvider>
+        <PokeBox />
+      </TeamProvider>
       <Footer />
     </div>
   )
