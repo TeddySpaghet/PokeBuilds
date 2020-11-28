@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react'
 import TeamModel from '../models/team'
+import chalk from 'chalk'
 
 import { Link } from 'react-router-dom'
 import TeamCard from '../components/TeamCard'
@@ -21,9 +22,10 @@ class TeamsPage extends Component {
   }
 
   render() {
+    console.log(this.state.teams)
     let teamList = this.state.teams.map((team, index) => {
       return (
-        <Link to={`/teams/${team.id}`} key={index}>
+        <Link to={`teams/${team.id}`} key={index}>
           <TeamCard {...team} />
         </Link>
       )

@@ -1,6 +1,8 @@
 import React from 'react'
+import chalk from 'chalk'
 
 const TeamCard = (props) => {
+  console.log(chalk.red(props))
   const pokemonList = props.pokemons.map((pokemon, index) => {
     return <h4 key={index}>{pokemon.name}</h4>
   })

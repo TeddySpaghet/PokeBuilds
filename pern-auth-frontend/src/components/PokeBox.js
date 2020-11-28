@@ -7,8 +7,6 @@ import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { MockTeam } from './MockTeam'
 
-// TODO Build Team Function:
-
 const PokeBox = (props) => {
   // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
   const [team] = useContext(TeamContext) // to use user inputted real data

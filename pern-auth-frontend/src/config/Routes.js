@@ -6,6 +6,7 @@ import Register from '../pages/Register'
 import Login from '../pages/Login'
 import Profile from '../pages/Profile'
 import TeamsPage from '../pages/TeamsPage'
+import TeamShow from '../pages/TeamShow'
 import CreateTeam from '../pages/CreateTeam'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -29,6 +30,7 @@ const Routes = (props) => (
     <Route exact path='/' component={Home} />
     <Route path='/register' component={Register} />
     <Route path='/teams' component={TeamsPage} />
+    <Route path='teams/:id' component={TeamShow} />
     <Route path='/createteam' component={CreateTeam} />
     <Route
       path='/login'
