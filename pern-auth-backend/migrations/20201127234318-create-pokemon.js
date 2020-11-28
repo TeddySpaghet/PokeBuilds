@@ -23,9 +23,6 @@ module.exports = {
       move3: {
         type: Sequelize.STRING,
       },
-      teamName: {
-        type: Sequelize.STRING,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -35,9 +32,7 @@ module.exports = {
         type: Sequelize.DATE,
       },
       teamId: {
-        type: Sequelize.INTEGER, // or choose what you want
-        // allowNull: false,
-        onDelete: 'CASCADE', // or choose what you want to do
+        type: Sequelize.INTEGER,
       },
     })
   },

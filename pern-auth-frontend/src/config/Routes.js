@@ -29,7 +29,7 @@ const Routes = (props) => (
     <Route exact path='/' component={Home} />
     <Route path='/register' component={Register} />
     <Route path='/teams' component={TeamsPage} />
-    <Route path='/teams/createteam' component={CreateTeam} />
+    <Route path='/createteam' component={CreateTeam} />
     <Route
       path='/login'
       render={(routeComponentProps) => {

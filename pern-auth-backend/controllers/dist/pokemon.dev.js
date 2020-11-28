@@ -3,7 +3,7 @@
 var db = require('../models');
 
 var create = function create(req, res) {
-  var _ref, name, move0, move1, move2, move3, teamName, pokemon, team;
+  var _ref, name, move0, move1, move2, move3, teamId, pokemon, team;
 
   return regeneratorRuntime.async(function create$(_context) {
     while (1) {
@@ -20,7 +20,7 @@ var create = function create(req, res) {
           move1 = _ref.move1;
           move2 = _ref.move2;
           move3 = _ref.move3;
-          teamName = _ref.teamName;
+          teamId = _ref.teamId;
           _context.next = 12;
           return regeneratorRuntime.awrap(db.pokemon.create({
             name: name,
@@ -28,17 +28,16 @@ var create = function create(req, res) {
             move1: move1,
             move2: move2,
             move3: move3,
-            teamName: teamName
+            teamId: teamId
           }));
 
         case 12:
           pokemon = _context.sent;
           _context.next = 15;
-          return regeneratorRuntime.awrap(db.team.findOrCreate({
+          return regeneratorRuntime.awrap(db.team.findOne({
             where: {
-              teamName: teamName
-            },
-            include: [db.pokemon]
+              id: teamId
+            }
           }));
 
         case 15:
@@ -56,27 +55,12 @@ var create = function create(req, res) {
           console.log(_context.t0);
 
         case 23:
-          console.log("let's go baby"); // .then((newPokemon) => {
-          //   // console.log(newPokemon)
-          //   res.json(newPokemon)
-          //   db.team.findOrCreate({ where: { teamName: teamName } }).then((team) => {
-          //     team.addPokemon()
-          //     console.log('*********THIS IS NEW POKEMON', newPokemon)
-          //     // x.addPokemon(newPokemon)
-          //   })
-          // })
-
-        case 24:
         case "end":
           return _context.stop();
       }
     }
   }, null, null, [[0, 20]]);
-}; // todo associate created pokemon with team
-// db.team.find({ where: teamName }).then((foundTeam) => {
-//   team.addPokemon()
-// })
-
+};
 
 module.exports = {
   create: create

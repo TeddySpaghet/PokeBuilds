@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.team.hasMany(models.pokemon, { as: 'teamName' })
+      models.team.hasMany(models.pokemon)
     }
   }
   team.init(

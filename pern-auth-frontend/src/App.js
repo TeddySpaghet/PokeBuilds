@@ -29,9 +29,6 @@ function App() {
     <div className='App'>
       <Header currentUser={currentUser} logout={logout} />
       <Routes currentUser={currentUser} storeUser={storeUser} />
-      <TeamProvider>
-        <PokeBox />
-      </TeamProvider>
       <Footer />
     </div>
   )

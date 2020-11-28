@@ -42,9 +42,7 @@ module.exports = function (sequelize, DataTypes) {
        * The `models/index` file will call this method automatically.
        */
       value: function associate(models) {
-        models.team.hasMany(models.pokemon, {
-          as: 'teamName'
-        });
+        models.team.hasMany(models.pokemon);
       }
     }]);
 
