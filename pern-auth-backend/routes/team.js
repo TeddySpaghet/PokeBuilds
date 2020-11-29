@@ -1,8 +1,9 @@
 const router = require('express').Router()
-const passport = require('../passport')
 const team = require('../controllers/team')
 
 router.get('/', team.index)
-router.post('/createteam', team.create)
+router.get('/:id', team.show)
+router.post('/', team.create)
+router.put('/:id', team.update)
 
 module.exports = router
