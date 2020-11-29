@@ -33,19 +33,6 @@ const PokeBox = (props) => {
       team,
     }).then((data) => {
       console.log('Successful team creation', data)
-      // console.log(data.id)
-      // for (let i in team) {
-      //   PokemonModel.create({
-      //     name: team[i].name,
-      //     move0: team[i].moves.move0,
-      //     move1: team[i].moves.move1,
-      //     move2: team[i].moves.move2,
-      //     move3: team[i].moves.move3,
-      //     teamId: data.id,
-      //   }).then((data) => {
-      //     console.log('Successful pokemon creation', data)
-      //   })
-      // }
     })
   }
   return (

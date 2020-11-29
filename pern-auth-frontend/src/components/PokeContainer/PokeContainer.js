@@ -11,7 +11,6 @@ const PokeContainer = ({ id }) => {
   const [team, setTeam] = useContext(TeamContext)
 
   useEffect(() => {
-    console.log('come on man!')
     if (pokemon) {
       setTeam({ ...team, [`pokemon${id}`]: pokemon.name })
     }

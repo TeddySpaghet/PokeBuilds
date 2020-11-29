@@ -21,7 +21,7 @@ class TeamShow extends Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     let pokemonList = ''
     if (this.state.team.pokemons) {
       pokemonList = this.state.team.pokemons.map((pokemon, index) => {
