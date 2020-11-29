@@ -7,7 +7,7 @@ const CreateTeam = () => {
   return (
     <div>
       <TeamProvider>
-        <PokeBox />
+        <PokeBox context={'x'} />
       </TeamProvider>
     </div>
   )

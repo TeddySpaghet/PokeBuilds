@@ -2,15 +2,17 @@ import React, { useState, useContext } from 'react'
 import TeamModel from '../models/team'
 import PokeContainerList from './PokeContainer/PokeContainerList'
 import { TeamContext } from './Contexts/TeamContext'
-import { TeamProvider } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
-import { MockTeam } from './MockTeam'
 
 const PokeBox = (props) => {
-  // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
-  const [team] = useContext(TeamContext) // to use user inputted real data
-  // const [team] = useState(MockTeam) // to use mock data
+
+  // what is the mode context? 
+  // On edit page, it needs to pulled from currentTeam.team.
+  // On create page, it needs to be pulled from TeamContext
+
+  // if it's coming 
+  const [team] = useContext(TeamContext)
 
   const [teamName, setTeamName] = useState('wow')
   const [teamDescription, setTeamDescription] = useState('ok')

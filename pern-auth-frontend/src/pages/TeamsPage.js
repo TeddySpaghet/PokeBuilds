@@ -22,7 +22,6 @@ class TeamsPage extends Component {
   }
 
   render() {
-    console.log(this.state.teams)
     let teamList = this.state.teams.map((team, index) => {
       return (
         <Link to={`teams/${team.id}`} key={index}>

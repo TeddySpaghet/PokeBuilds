@@ -1,10 +1,18 @@
 // import { formatMs } from '@material-ui/core'
-import React, { useState, createContext } from 'react'
+import React, { useState, useContext, createContext } from 'react'
+import { MockTeam } from '../MockTeam'
+import { NewTeam } from '../NewTeam'
 
 export const TeamContext = createContext()
 
 export const TeamProvider = ({ children }) => {
-  const [team, setTeam] = useState({})
+  console.log(children)
+  // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
+
+  // if edit [team, setTeam] =
+
+  // const [team, setTeam] = useState(NewTeam) // to use user inputted real
+  const [team, setTeam] = useState(MockTeam) // to use mock data
 
   return (
     <TeamContext.Provider value={[team, setTeam]}>
