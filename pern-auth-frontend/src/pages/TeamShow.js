@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import TeamModel from '../models/team'
-
+import { Link } from 'react-router-dom'
 import TeamCard from '../components/TeamCard'
 
 class TeamShow extends Component {
@@ -46,7 +46,7 @@ class TeamShow extends Component {
           <h3>{this.state.team.teamName}</h3>
           <p>{this.state.team.teamDescription}</p>
           {pokemonList}
-          edit team
+          <Link to={`/teams/${this.state.team.id}/edit`}>edit</Link>
           <hr />
         </div>
         {/* {this.state.team.teamName ? <TeamCard {...this.state.team} /> : ''} */}
