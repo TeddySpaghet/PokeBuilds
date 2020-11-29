@@ -29,9 +29,9 @@ const Routes = (props) => (
   <Switch>
     <Route exact path='/' component={Home} />
     <Route path='/register' component={Register} />
+    <Route path='/teams/create' component={CreateTeam} />
+    <Route path='/teams/:id' component={TeamShow} />
     <Route path='/teams' component={TeamsPage} />
-    <Route path='teams/:id' component={TeamShow} />
-    <Route path='/createteam' component={CreateTeam} />
     <Route
       path='/login'
       render={(routeComponentProps) => {

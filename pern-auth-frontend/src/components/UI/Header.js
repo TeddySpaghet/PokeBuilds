@@ -14,7 +14,7 @@ const Header = (props) => {
             <Link to={'/teams'}>teams</Link>
           </li>
           <li>
-            <Link to={'/createteam'}>create team</Link>
+            <Link to={'/teams/create'}>create team</Link>
           </li>
           {props.currentUser ? (
             <>

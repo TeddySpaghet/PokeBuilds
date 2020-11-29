@@ -21,9 +21,35 @@ class TeamShow extends Component {
   }
 
   render() {
+    console.log(this.state)
+    let pokemonList = ''
+    if (this.state.team.pokemons) {
+      pokemonList = this.state.team.pokemons.map((pokemon, index) => {
+        return (
+          <div>
+            <h4 key={index}>{pokemon.name}</h4>
+            <p>{pokemon.move0}</p>
+            <p>{pokemon.move1}</p>
+            <p>{pokemon.move2}</p>
+            <p>{pokemon.move3}</p>
+          </div>
+        )
+      })
+    }
+
     return (
       <div>
-        <TeamCard {...this.state.team} />
+        <div className='TeamCard'>
+          <div className='image-wrap'>
+            {/* <img src={props.coverArtUrl} alt='Game art' /> */}
+          </div>
+          <h3>{this.state.team.teamName}</h3>
+          <p>{this.state.team.teamDescription}</p>
+          {pokemonList}
+          edit team
+          <hr />
+        </div>
+        {/* {this.state.team.teamName ? <TeamCard {...this.state.team} /> : ''} */}
       </div>
     )
   }
