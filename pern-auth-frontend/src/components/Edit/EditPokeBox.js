@@ -5,13 +5,9 @@ import { TeamContext } from '../Contexts/TeamContext'
 import { PokedexProvider } from '../Contexts/PokedexContext'
 import PokemonModel from '../../models/pokemon'
 import { UserContext } from '../../UserContext'
-import { ModeContext } from '../Contexts/ModeContext'
+import './EditPokeBox.scss'
 
-const EditPokeBox = (props) => {
-  // what is the mode context?
-  // On edit page, it needs to pulled from currentTeam.team.
-  // On create page, it needs to be pulled from TeamContext
-
+const PokeBox = (props) => {
   const [currentUser, setCurrentUser] = useContext(UserContext)
 
   const [team] = useContext(TeamContext)
@@ -29,13 +25,14 @@ const EditPokeBox = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    console.log(team)
+
     // TODO conditionally call the TeamModel.update or TeamModel.create. Also create a MODE context.
     // if(mode==='create'){
     TeamModel.update({
       teamName,
       teamDescription,
       team,
-      currentUser,
     }).then((data) => {
       console.log('Successful team update', data)
     })
@@ -45,7 +42,7 @@ const EditPokeBox = (props) => {
     <div>
       <PokedexProvider>
         <EditPokeContainerList />
-        <form onSubmit={handleSubmit}>
+        <form className='team-submit-form' onSubmit={handleSubmit}>
           <input
             type='text'
             placeholder='Team Name'
@@ -56,11 +53,13 @@ const EditPokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
-          <button type='submit'>{'Edit Team'}</button>
+          <button className='btn-submit' type='submit'>
+            Edit Team
+          </button>
         </form>
       </PokedexProvider>
     </div>
   )
 }
 
-export default EditPokeBox
+export default PokeBox

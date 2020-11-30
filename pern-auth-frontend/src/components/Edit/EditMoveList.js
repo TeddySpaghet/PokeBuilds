@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import MoveBox from './MoveBox'
+import EditMoveBox from './EditMoveBox'
 import { TeamContext } from '../Contexts/TeamContext'
 
 function MoveBoxList({ id, pokemon }) {
@@ -9,7 +9,7 @@ function MoveBoxList({ id, pokemon }) {
   const numMoves = [1, 2, 3, 4]
   const moveList = numMoves.map((move, index) => {
     return (
-      <MoveBox
+      <EditMoveBox
         key={index}
         id={id}
         moveId={index}

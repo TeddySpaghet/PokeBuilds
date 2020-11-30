@@ -1,5 +1,5 @@
 import React from 'react'
-import StatBox from './StatBox'
+import EditStatBox from './EditStatBox'
 
 const StatList = ({ pokemon, id }) => {
   const statArr = [
@@ -12,7 +12,7 @@ const StatList = ({ pokemon, id }) => {
   ]
 
   const statList = statArr.map((stat, index) => {
-    return <StatBox key={index} stat={stat} index={index} pokemon={pokemon} />
+    return <EditStatBox key={index} stat={stat} index={index} pokemon={pokemon} />
   })
 
   return <React.Fragment>{statList}</React.Fragment>

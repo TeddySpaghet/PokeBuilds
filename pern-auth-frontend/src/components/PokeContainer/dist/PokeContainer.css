@@ -1,0 +1,32 @@
+.poke-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.table-header {
+  font-family: "Press Start 2P", cursive;
+  display: flex;
+  background-color: #f00000;
+  color: whitesmoke;
+  font-weight: bolder;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: -1rem;
+  padding-bottom: -1rem;
+  border: 0.2rem solid black;
+  border-radius: 0.25rem;
+  box-shadow: 0.01rem 0rem 0.2rem black;
+  justify-content: space-between;
+  letter-spacing: 0.1rem;
+}
+
+#header-stats, #header-value {
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
+.poke-image {
+  max-width: 300px;
+}

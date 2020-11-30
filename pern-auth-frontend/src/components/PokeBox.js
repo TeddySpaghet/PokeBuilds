@@ -6,14 +6,12 @@ import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { UserContext } from '../UserContext'
 import './PokeBox.scss'
-import { ModeContext } from './Contexts/ModeContext'
 
 const PokeBox = (props) => {
   // what is the mode context?
   // On edit page, it needs to pulled from currentTeam.team.
   // On create page, it needs to be pulled from TeamContext
 
-  const [mode, setMode] = useContext(ModeContext)
   const [currentUser, setCurrentUser] = useContext(UserContext)
 
   const [team] = useContext(TeamContext)
@@ -49,7 +47,7 @@ const PokeBox = (props) => {
     <div>
       <PokedexProvider>
         <PokeContainerList />
-        <form className="team-submit-form" onSubmit={handleSubmit}>
+        <form className='team-submit-form' onSubmit={handleSubmit}>
           <input
             type='text'
             placeholder='Team Name'
@@ -60,8 +58,8 @@ const PokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
-          <button className="btn-submit" type='submit'>
-            {mode === 'create' ? 'Create Team' : 'Edit Team'}
+          <button className='btn-submit' type='submit'>
+            Create Team
           </button>
         </form>
       </PokedexProvider>

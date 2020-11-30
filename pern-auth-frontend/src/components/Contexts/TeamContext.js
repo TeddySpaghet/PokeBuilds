@@ -3,7 +3,6 @@ import React, { useState, useContext, createContext } from 'react'
 import TeamModel from '../../models/team'
 import { MockTeam } from '../MockTeam'
 import { NewTeam } from '../NewTeam'
-import { ModeContext } from './ModeContext'
 
 export const TeamContext = createContext()
 
