@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import TeamCard from '../components/TeamCard'
 import TeamModel from '../models/team'
+import { UserContext } from '../UserContext'
 
 const Profile = (props) => {
+  const [currentUser, setCurrentUser] = useContext(UserContext)
+
   const [teams, setTeams] = useState({
     teams: [],
   })
@@ -13,7 +16,7 @@ const Profile = (props) => {
   }, [])
 
   const fetchData = () => {
-    TeamModel.allByUser().then((data) => {
+    TeamModel.allByUser(currentUser).then((data) => {
       setTeams({ teams: data.teams })
     })
   }
@@ -27,8 +30,8 @@ const Profile = (props) => {
   })
   return (
     <div>
-      <h1>Profile of user with ID {props.currentUser}</h1>
-      <h3>User {props.currentUser}'s teams:</h3>
+      <h1>Profile of user with ID {currentUser}</h1>
+      <h3>User {currentUser}'s teams:</h3>
       {teams.teams ? teamList : 'Loading...'}
     </div>
   )

@@ -10,12 +10,6 @@ const Header = (props) => {
       </div>
       <div className='links'>
         <ul>
-          <li>
-            <Link to={'/teams'}>teams</Link>
-          </li>
-          <li>
-            <Link to={'/teams/create'}>create team</Link>
-          </li>
           {props.currentUser ? (
             <>
               <li>

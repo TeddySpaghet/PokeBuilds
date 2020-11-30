@@ -5,8 +5,10 @@ export default class TeamModel {
     return fetch(`${REACT_APP_API_URL}/teams`).then((res) => res.json())
   }
 
-  static allByUser = () => {
-    return fetch(`${REACT_APP_API_URL}/teams/user`).then((res) => res.json())
+  static allByUser = (currentUser) => {
+    return fetch(`${REACT_APP_API_URL}/teams/user/${currentUser}`).then((res) =>
+      res.json()
+    )
   }
 
   static show = (teamId) => {
