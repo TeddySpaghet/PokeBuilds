@@ -40,11 +40,12 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * HTML
 
 ## Code Snippets
-[Code Snippets](code-snippet.md)
+[Code Snippets](images/unknown.png)
+[Code Snippets](images/structure.PNG)
 
 ## Planned Features
 * Search function for pokemon.
 * Retrieve teams from a user search.
 * Search for Teams by game (region locked)
 * Customizable stats(EV's)
-* Liking or sharing other user's teams
+* Liking or sharing other user's teamsg
