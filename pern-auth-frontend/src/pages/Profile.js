@@ -7,6 +7,7 @@ import { UserContext } from '../UserContext'
 
 const Profile = (props) => {
   const [currentUser, setCurrentUser] = useContext(UserContext)
+  console.log(currentUser)
 
   const [teams, setTeams] = useState({
     teams: [],
