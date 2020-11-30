@@ -11,7 +11,7 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * Create a Pokebuilds Account
 * View your created teams
 * View most-liked teams
-* create or remove teams
+* Create or remove teams
 * View information about pokemom
 
 ## Screenshots
@@ -45,6 +45,6 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 ## Planned Features
 * Search function for pokemon.
 * Retrieve teams from a user search.
-* search for Teams by game (region locked)
-* customizable stats(ev's)
+* Search for Teams by game (region locked)
+* Customizable stats(EV's)
 * Liking or sharing other user's teams
