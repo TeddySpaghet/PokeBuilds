@@ -12,9 +12,9 @@ const PokeContainer = ({ id }) => {
   const [team, setTeam] = useContext(TeamContext)
 
   useEffect(() => {
-    console.log('come on man!')
     if (pokemon) {
       setTeam({ ...team, [`pokemon${id}`]: pokemon.name })
+      console.log(pokemon)
     }
   }, [pokemon])
 
@@ -23,15 +23,23 @@ const PokeContainer = ({ id }) => {
       <article className="poke-container">
         <span className="poke-header">
           <h1>{pokemon ? pokemon.name : 'missingno'}</h1>
-          <img src={missingno} alt='missingno' />
+          <img class="poke-image" src={ pokemon ? pokemon.sprites.other["official-artwork"].front_default : missingno} alt='missingno' />
         </span>
+        <div className="data-select">
         <PokeChooser id={id} setPokemon={setPokemon} />
         <div className="poke-movelist">
           <MoveList id={id} pokemon={pokemon} />
         </div>
-        <div className="poke-statlist">
-          <StatList id={id} pokemon={pokemon} />
         </div>
+        {pokemon ? (
+          <div className="poke-statlist">
+            <div className="table-header">
+              <p id="header-stats">STATS</p>
+              <p id="header-value">VALUE</p>
+            </div>
+              <StatList id={id} pokemon={pokemon} />
+          </div>
+        ) : ('')} 
       </article>
     </React.Fragment>
   )

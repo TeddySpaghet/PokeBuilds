@@ -66,6 +66,9 @@ const PokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
+          {/* <input
+          type='hidden'
+          something set userId/> */}
           <button type='submit'>Create Team</button>
         </form>
       </PokedexProvider>
