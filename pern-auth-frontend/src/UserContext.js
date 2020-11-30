@@ -4,7 +4,6 @@ import React, { useState, useContext, createContext } from 'react'
 export const UserContext = createContext()
 
 export const UserProvider = ({ children }) => {
-  console.log(children)
   // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
 
   // if edit [team, setUser] =

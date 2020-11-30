@@ -2,8 +2,12 @@ import React, { useState, useEffect, useContext } from 'react'
 import TeamModel from '../models/team'
 import { TeamContext } from '../components/Contexts/TeamContext'
 import PokeBox from '../components/PokeBox'
+import { ModeContext, ModeProvider } from '../components/Contexts/ModeContext'
+import { NewTeam } from '../components/NewTeam'
 
 const EditTeam = (props) => {
+  const [mode, setMode] = useContext(ModeContext)
+  // setMode({ mode: 'edit', currentTeamId: props.match.params.id })
   const [team, setTeam] = useContext(TeamContext)
   const currentTeamId = props.match.params.id
 
@@ -23,12 +27,18 @@ const EditTeam = (props) => {
     })
   }
 
+  // if (mode.mode === 'edit') {
+  //   fetchData()
+  // } else if (mode.mode === 'create') {
+  //   setTeam(NewTeam)
+  // }
+
   useEffect(() => {
     fetchData()
   }, [])
   return (
     <div>
-      <h1>Edit {team.teamName}</h1>
+      {/* <h1>Edit {team.teamName}</h1> */}
       <PokeBox />
     </div>
   )

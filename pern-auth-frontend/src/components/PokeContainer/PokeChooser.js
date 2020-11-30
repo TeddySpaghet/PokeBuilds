@@ -22,6 +22,7 @@ export default function PokeChooser({ id, pokemon, setPokemon }) {
   // useEffect(() => {}, [team])
 
   // TODO Implement functionality where the preexisting team is filling out the Figure out why this runs as an infinite loop
+  // console.log(team)
 
   const pokemonName = team[`pokemon${id}`].name
 
@@ -29,9 +30,7 @@ export default function PokeChooser({ id, pokemon, setPokemon }) {
     .map((pokemon) => pokemon.name)
     .find((x) => x === pokemonName)
 
-  // console.log(pokemonNameFromTeam)
-
-  // console.log(defaultPokemon)
+  console.log(pokemonNameFromTeam)
 
   const defaultPokemonFromPokedex = pokedex.find(
     (x) => x.name === pokemonNameFromTeam
