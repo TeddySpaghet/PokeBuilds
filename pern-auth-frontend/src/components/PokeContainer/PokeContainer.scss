@@ -3,6 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     padding-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .table-header {
@@ -33,4 +34,12 @@
 
 .poke-image {
     max-width: 300px;
+}
+
+@media screen and (max-width: 950px) {
+
+    .poke-container {
+        justify-content: left;
+    }
+
 }

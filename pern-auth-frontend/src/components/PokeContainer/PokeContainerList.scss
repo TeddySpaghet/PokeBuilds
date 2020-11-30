@@ -1,4 +1,11 @@
-.container {
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 950px) {
+  .grid {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;    
+  }
 }

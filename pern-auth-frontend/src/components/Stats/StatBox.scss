@@ -68,3 +68,21 @@ $maxW: 180;
 #stat-value {
   margin-left: 1rem;
 }
+
+@media screen and (max-width: 450px) {
+  .table-stat {
+    font-size: .5rem;
+  }
+  #stat-name {
+    width: 125px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .table-stat {
+    font-size: .5rem;
+  }
+  #stat-name {
+    width: 80px;
+  }
+}

@@ -14,7 +14,7 @@ function PokeContainerList() {
   })
   return (
     <React.Fragment>
-      <Grid className='container' container spacing={2}>
+      <Grid className='grid' container spacing={2}>
         {pokemonList}
       </Grid>
     </React.Fragment>

@@ -5,6 +5,7 @@ import { TeamContext } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { UserContext } from '../UserContext'
+import { HistoryContext } from '../HistoryContext'
 import './PokeBox.scss'
 
 const PokeBox = (props) => {
@@ -13,6 +14,7 @@ const PokeBox = (props) => {
   // On create page, it needs to be pulled from TeamContext
 
   const [currentUser, setCurrentUser] = useContext(UserContext)
+  const [history] = useContext(HistoryContext)
 
   const [team] = useContext(TeamContext)
 
@@ -40,6 +42,7 @@ const PokeBox = (props) => {
       currentUser,
     }).then((data) => {
       console.log('Successful team creation', data)
+      // history.push('/profile')
     })
     // }
   }
