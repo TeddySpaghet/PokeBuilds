@@ -15,9 +15,9 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * View information about pokemom
 
 ## Screenshots
-![Screenshots](images/unknown (1).png)
-![Screenshots](images/unknown (2).png)
-![Screenshots](images/unknown (3).png)
+![Screenshots](images/unknown(1).png)
+![Screenshots](images/unknown(2).png)
+![Screenshots](images/unknown(3).png)
 
 
 ## User Stories
