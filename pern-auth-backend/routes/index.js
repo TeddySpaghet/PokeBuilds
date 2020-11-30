@@ -1,4 +1,4 @@
 module.exports = {
     auth: require('./auth')
-    teams: require('./teams')
+    team: require('./teams')
 }

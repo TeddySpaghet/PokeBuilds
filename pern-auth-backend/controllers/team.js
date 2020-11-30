@@ -3,7 +3,7 @@ const chalk = require('chalk')
 
 const index = (req, res) => {
   db.team
-    .findAll()
+    .findAll({ include: db.pokemon })
     .then((foundTeams) => {
       if (!foundTeams)
         return res.json({
@@ -12,6 +12,20 @@ const index = (req, res) => {
 
       // respond with a JSON-ified object of users
       res.json({ teams: foundTeams })
+    })
+    .catch((err) => console.log('Error at teams#index', err))
+}
+
+const show = (req, res) => {
+  db.team
+    .findByPk(req.params.id, { include: db.pokemon })
+    .then((foundTeam) => {
+      if (!foundTeam)
+        return res.json({
+          message: 'Team with provided ID not found.',
+        })
+
+      res.json({ team: foundTeam })
     })
     .catch((err) => console.log('Error at teams#index', err))
 }
@@ -47,7 +61,24 @@ const create = async (req, res) => {
   await console.log('New team created!')
 }
 
+const update = (req, res) => {
+  // make the update route
+  db.team
+    .update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    })
+    .then((updatedTeam) => {
+      // Validations and error handling here
+      res.json({ game: updatedTeam })
+    })
+    .catch((err) => console.log('Error at teams#index', err))
+}
+
 module.exports = {
   create,
   index,
+  show,
+  update,
 }

@@ -5,13 +5,30 @@ var db = require('../models');
 var chalk = require('chalk');
 
 var index = function index(req, res) {
-  db.team.findAll().then(function (foundTeams) {
+  db.team.findAll({
+    include: db.pokemon
+  }).then(function (foundTeams) {
     if (!foundTeams) return res.json({
       message: 'No Teams found in database.'
     }); // respond with a JSON-ified object of users
 
     res.json({
       teams: foundTeams
+    });
+  })["catch"](function (err) {
+    return console.log('Error at teams#index', err);
+  });
+};
+
+var show = function show(req, res) {
+  db.team.findByPk(req.params.id, {
+    include: db.pokemon
+  }).then(function (foundTeam) {
+    if (!foundTeam) return res.json({
+      message: 'Team with provided ID not found.'
+    });
+    res.json({
+      team: foundTeam
     });
   })["catch"](function (err) {
     return console.log('Error at teams#index', err);
@@ -90,7 +107,25 @@ var create = function create(req, res) {
   });
 };
 
+var update = function update(req, res) {
+  // make the update route
+  db.team.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  }).then(function (updatedTeam) {
+    // Validations and error handling here
+    res.json({
+      game: updatedTeam
+    });
+  })["catch"](function (err) {
+    return console.log('Error at teams#index', err);
+  });
+};
+
 module.exports = {
   create: create,
-  index: index
+  index: index,
+  show: show,
+  update: update
 };
