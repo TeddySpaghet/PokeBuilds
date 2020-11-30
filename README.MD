@@ -49,4 +49,4 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * Retrieve teams from a user search.
 * Search for Teams by game (region locked)
 * Customizable stats(EV's)
-* Liking or sharing other user's teamsg
+* Liking or sharing other user's teams
