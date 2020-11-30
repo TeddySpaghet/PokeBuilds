@@ -4,6 +4,7 @@ import TeamCard from '../components/TeamCard'
 import TeamModel from '../models/team'
 import { UserContext } from '../UserContext'
 
+
 const Profile = (props) => {
   const [currentUser, setCurrentUser] = useContext(UserContext)
 

@@ -62,7 +62,7 @@ const Login = props => {
           />
         
         </div>
-        <button type="submit">Login</button>
+        <button className="btn-submit" type="submit">Login</button>
       </form>
     </div>
   )

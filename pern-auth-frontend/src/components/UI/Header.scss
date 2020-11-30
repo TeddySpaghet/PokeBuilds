@@ -1,11 +1,14 @@
 header {
   font-family: 'Press Start 2P', cursive;
-  font-size: 1rem;
+  font-size: 1.25rem;
   background-color: rgb(238,21,21);
   text-align: left;
   padding: 20px 10px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  max-height: 150px;
+  border-bottom: .5rem solid rgb(34,34,36);
 
   a {
     color: #fff;
@@ -23,7 +26,11 @@ header {
 
     li {
       list-style-type: none;
-      padding: 0px 10px;
+      padding: 0rem 1.5rem;
     }
+  }
+
+    img {
+    max-height: 80px;
   }
 }

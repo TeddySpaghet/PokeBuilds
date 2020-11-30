@@ -1,24 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
-// import pokebuilds from './src/img/pokebuilds.png'
-
+import pokebuilds from "../../img/pokebuilds.png"
 const Header = (props) => {
   return (
     <header>
       <div className='logo'>
-      {/* <img src={pokebuilds} alt='' /> */}
-        <Link to={'/'}>Home!</Link>
+        <Link to={'/'}>
+          <img src={pokebuilds} alt='' />
+        </Link>
       </div>
       <div className='links'>
         <ul>
           {props.currentUser ? (
             <>
               <li>
-                <Link to={'/teams'}>teams</Link>
+                <Link to={'/teams'}>Teams</Link>
               </li>
               <li>
-                <Link to={'/teams/create'}>create team</Link>
+                <Link to={'/teams/create'}>Create Team</Link>
               </li>
               <li>
                 <Link to={'/profile'}>Profile</Link>

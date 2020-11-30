@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import UserModel from '../models/user'
+import '../components/PokeBox.scss'
 
 const Register = props => {
   const [name, setName] = useState('');
@@ -81,7 +82,7 @@ const Register = props => {
             required
           />
         </div>
-        <button type="submit">Register</button>
+        <button className="btn-submit" type="submit">Register</button>
       </form>
     </div>
   )

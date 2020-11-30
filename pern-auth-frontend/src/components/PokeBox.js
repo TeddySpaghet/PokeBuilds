@@ -5,6 +5,7 @@ import { TeamContext } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { UserContext } from '../UserContext'
+import './PokeBox.scss'
 
 const PokeBox = (props) => {
   // what is the mode context?
@@ -45,7 +46,7 @@ const PokeBox = (props) => {
     <div>
       <PokedexProvider>
         <PokeContainerList />
-        <form onSubmit={handleSubmit}>
+        <form className="team-submit-form" onSubmit={handleSubmit}>
           <input
             type='text'
             placeholder='Team Name'
@@ -56,10 +57,7 @@ const PokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
-          {/* <input
-          type='hidden'
-          something set userId/> */}
-          <button type='submit'>Create Team</button>
+          <button className="btn-submit" type='submit'>Create Team</button>
         </form>
       </PokedexProvider>
     </div>
