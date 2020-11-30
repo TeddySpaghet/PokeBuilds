@@ -5,12 +5,14 @@ import { TeamContext } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { UserContext } from '../UserContext'
+import { ModeContext } from './Contexts/ModeContext'
 
 const PokeBox = (props) => {
   // what is the mode context?
   // On edit page, it needs to pulled from currentTeam.team.
   // On create page, it needs to be pulled from TeamContext
 
+  const [mode, setMode] = useContext(ModeContext)
   const [currentUser, setCurrentUser] = useContext(UserContext)
 
   const [team] = useContext(TeamContext)
@@ -30,8 +32,8 @@ const PokeBox = (props) => {
 
     console.log(currentUser)
 
-    // todo find teammodel, if none, then create
-
+    // TODO conditionally call the TeamModel.update or TeamModel.create. Also create a MODE context.
+    // if(mode==='create'){
     TeamModel.create({
       teamName,
       teamDescription,
@@ -40,6 +42,7 @@ const PokeBox = (props) => {
     }).then((data) => {
       console.log('Successful team creation', data)
     })
+    // }
   }
   return (
     <div>
@@ -56,7 +59,9 @@ const PokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
-          <button type='submit'>Create Team</button>
+          <button type='submit'>
+            {mode === 'create' ? 'Create Team' : 'Edit Team'}
+          </button>
         </form>
       </PokedexProvider>
     </div>
