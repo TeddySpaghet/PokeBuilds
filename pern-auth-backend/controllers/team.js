@@ -77,6 +77,7 @@ const create = async (req, res) => {
 }
 
 const update = (req, res) => {
+  console.log(req.params)
   // make the update route
   db.team
     .update(req.body, {
@@ -86,7 +87,7 @@ const update = (req, res) => {
     })
     .then((updatedTeam) => {
       // Validations and error handling here
-      res.json({ game: updatedTeam })
+      res.json({ team: updatedTeam })
     })
     .catch((err) => console.log('Error at teams#index', err))
 }
