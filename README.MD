@@ -45,8 +45,8 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * HTML
 
 ## Code Snippets
-[Ted's Snippets](images/unknown.png)
-[Nile's Snippets](images/structure.PNG)
+[Ted's Snippets](images/unknown.png)\
+[Nile's Snippets](images/structure.PNG)\
 [Nick's Snippets](images/Screen_Shot_2020-11-30_at_11.27.54_AM.png)
 
 ## Planned Features
@@ -59,3 +59,4 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 ## Credits, Thank you
 
 ![The Brock](images/_K1-KmXnI5jeiGRajzMVfTskeGWorZtPeArgSuwQT0g.jpg)
+=======
