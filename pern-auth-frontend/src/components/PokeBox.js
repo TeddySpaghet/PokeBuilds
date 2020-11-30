@@ -5,11 +5,8 @@ import { TeamContext } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
 import { UserContext } from '../UserContext'
-<<<<<<< HEAD
 import './PokeBox.scss'
-=======
 import { ModeContext } from './Contexts/ModeContext'
->>>>>>> d253985f4c000b715d07cb7c57a4dd450cb0894d
 
 const PokeBox = (props) => {
   // what is the mode context?
@@ -63,13 +60,9 @@ const PokeBox = (props) => {
             placeholder='Team Description'
             onChange={handleTeamDescription}
           />
-<<<<<<< HEAD
-          <button className="btn-submit" type='submit'>Create Team</button>
-=======
-          <button type='submit'>
+          <button className="btn-submit" type='submit'>
             {mode === 'create' ? 'Create Team' : 'Edit Team'}
           </button>
->>>>>>> d253985f4c000b715d07cb7c57a4dd450cb0894d
         </form>
       </PokedexProvider>
     </div>
