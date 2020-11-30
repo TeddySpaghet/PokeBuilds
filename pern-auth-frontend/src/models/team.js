@@ -26,4 +26,14 @@ export default class TeamModel {
       body: JSON.stringify(data),
     }).then((res) => res.json())
   }
+
+  static update(data) {
+    return fetch(`${REACT_APP_API_URL}/teams/${data.currentUser}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json())
+  }
 }
