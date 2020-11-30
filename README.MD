@@ -15,8 +15,8 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * View information about pokemom
 
 ## Screenshots
-![Screenshots](images/unknown(1).png)
-![Screenshots](images/unknown(4).png)
+![Screenshots](images/unknown(1).png)\
+![Screenshots](images/unknown(4).png)\
 ![Screenshots](images/unknown(3).png)
 
 
@@ -34,13 +34,13 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 ![pokeERD](/images/Screen_Shot_2020-11-16_at_2.46.24_PM.png)
 
 ## Technologies
-* Express.js
+* AJAX
 * Node.js
 * MaterialUI
 * PostGreSQL
 * React Hooks
 * Javascript
-* jQuery
+* PokeApi
 * CSS
 * HTML
 
@@ -55,3 +55,7 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * Search for Teams by game (region locked)
 * Customizable stats(EV's)
 * Liking or sharing other user's teams
+
+## Credits, Thank you
+
+![The Brock](images/_K1-KmXnI5jeiGRajzMVfTskeGWorZtPeArgSuwQT0g.jpg)
