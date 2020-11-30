@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import TeamModel from '../models/team'
 import { TeamContext } from '../components/Contexts/TeamContext'
-import PokeBox from '../components/PokeBox'
+import EditPokeBox from '../components/Edit/EditPokeBox'
 import { ModeContext, ModeProvider } from '../components/Contexts/ModeContext'
 import { NewTeam } from '../components/NewTeam'
 
@@ -39,7 +39,7 @@ const EditTeam = (props) => {
   return (
     <div>
       {/* <h1>Edit {team.teamName}</h1> */}
-      <PokeBox />
+      <EditPokeBox />
     </div>
   )
 }
