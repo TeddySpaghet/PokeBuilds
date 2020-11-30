@@ -4,7 +4,7 @@ PokeBuilds is an online pokemon team builder, where you can recreate and share y
 
 
 ## Motivation
-The Pokemon team you collect when playing a Pokemon game is a crucial part of the playthrough and the way the experience changes everytime you play. What players are looking to accomplish can drastically what team would be best for them. Pokebuilds seeks to fill this spot by creating a platform for more focused players to save and share great teams in each game for different scenarios, like speed-running, pvp-battling, and other more niche game modes. 
+The Pokemon team you collect when playing a Pokemon game is a crucial part of the playthrough and changes the experience everytime you play. What players are looking to accomplish can drastically change what team would be best, when you wanna be the very best. Pokebuilds seeks to fill this niche with a platform for more focused players to save and share great PokemonBuilds for every challenge like speed-running, pvp-battling, and nuzlocking across all the generations and regions. 
 
 
 ## Existing Features
@@ -36,7 +36,7 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 ## Technologies
 * Express.js
 * Node.js
-* npm
+* MaterialUI
 * PostGreSQL
 * React Hooks
 * Javascript
