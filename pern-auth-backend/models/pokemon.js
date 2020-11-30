@@ -13,20 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.pokemon.belongsTo(models.team)
     }
-  }
-  pokemon.init(
-    {
-      name: DataTypes.STRING,
-      move0: DataTypes.STRING,
-      move1: DataTypes.STRING,
-      move2: DataTypes.STRING,
-      move3: DataTypes.STRING,
-      teamId: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      modelName: 'pokemon',
-    }
-  )
-  return pokemon
-}
+  };
+  pokemon.init({
+    name: DataTypes.STRING,
+    move0: DataTypes.STRING,
+    move1: DataTypes.STRING,
+    move2: DataTypes.STRING,
+    move3: DataTypes.STRING,
+    teamId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'pokemon',
+  });
+  return pokemon;
+};

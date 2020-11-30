@@ -13,17 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.team.hasMany(models.pokemon)
     }
-  }
-  team.init(
-    {
-      teamName: DataTypes.STRING,
-      teamDescription: DataTypes.TEXT,
-      userId: DataTypes.INTEGER,
-    },
-    {
-      sequelize,
-      modelName: 'team',
-    }
-  )
-  return team
-}
+  };
+  team.init({
+    teamName: DataTypes.STRING,
+    teamDescription: DataTypes.TEXT,
+    userId: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'team',
+  });
+  return team;
+};
