@@ -32,12 +32,12 @@ const Routes = (props) => (
     <Switch>
       <Route exact path='/' component={Home} />
       <Route path='/register' component={Register} />
-      <Route path='/teams/create' component={CreateTeam} />
+      <PrivateRoute path='/teams/create' component={CreateTeam} />
 
-      <Route path='/teams/:id/edit' component={EditTeam} />
+      <PrivateRoute path='/teams/:id/edit' component={EditTeam} />
 
-      <Route path='/teams/:id' component={TeamShow} />
-      <Route path='/teams' component={TeamsPage} />
+      <PrivateRoute path='/teams/:id' component={TeamShow} />
+      <PrivateRoute path='/teams' component={TeamsPage} />
       <Route
         path='/login'
         render={(routeComponentProps) => {

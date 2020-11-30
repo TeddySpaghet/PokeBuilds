@@ -2,12 +2,12 @@ import React from 'react'
 import { TeamProvider } from '../components/Contexts/TeamContext'
 import PokeBox from '../components/PokeBox'
 
-const CreateTeam = () => {
+const CreateTeam = (props) => {
   console.log('testing')
   return (
     <div>
       <TeamProvider>
-        <PokeBox context={'x'} />
+        <PokeBox props={props} />
       </TeamProvider>
     </div>
   )
