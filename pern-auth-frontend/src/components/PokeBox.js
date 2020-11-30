@@ -4,14 +4,15 @@ import PokeContainerList from './PokeContainer/PokeContainerList'
 import { TeamContext } from './Contexts/TeamContext'
 import { PokedexProvider } from './Contexts/PokedexContext'
 import PokemonModel from '../models/pokemon'
+import { UserContext } from '../UserContext'
 
 const PokeBox = (props) => {
-
-  // what is the mode context? 
+  // what is the mode context?
   // On edit page, it needs to pulled from currentTeam.team.
   // On create page, it needs to be pulled from TeamContext
 
-  // if it's coming 
+  const [currentUser, setCurrentUser] = useContext(UserContext)
+
   const [team] = useContext(TeamContext)
 
   const [teamName, setTeamName] = useState('wow')
@@ -27,12 +28,15 @@ const PokeBox = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
+    console.log(currentUser)
+
     // todo find teammodel, if none, then create
 
     TeamModel.create({
       teamName,
       teamDescription,
       team,
+      currentUser,
     }).then((data) => {
       console.log('Successful team creation', data)
     })

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import App from './App'
+import { UserProvider } from './UserContext'
 
 ReactDOM.render(
   // StrictMode is a tool for highlighting potential
@@ -12,7 +13,9 @@ ReactDOM.render(
   // its descendants.
   <React.StrictMode>
     <Router>
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
