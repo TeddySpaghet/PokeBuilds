@@ -13,7 +13,7 @@ export const TeamProvider = ({ children }) => {
   // ***USER INPUT REAL DATA vs MOCK DATA: Comment out one of the below two lines
 
   // to use user inputted real
-  // const [team, setTeam] = useState(MockTeam) // to use mock data
+   //const [team, setTeam] = useState(MockTeam) // to use mock data
 
   return (
     <TeamContext.Provider value={[team, setTeam]}>
