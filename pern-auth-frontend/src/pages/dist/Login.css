@@ -1,0 +1,21 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.login-form {
+  flex-direction: column;
+}
+
+.form-group {
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.form-group > input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
