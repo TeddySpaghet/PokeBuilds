@@ -40,8 +40,9 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * HTML
 
 ## Code Snippets
-[Code Snippets](images/unknown.png)
-[Code Snippets](images/structure.PNG)
+[Tes's Snippets](images/unknown.png)
+[Nile's Snippets](images/structure.PNG)
+[Nick's Snippets](images/Screen_Shot_2020-11-30_at_11.27.54_AM.png)
 
 ## Planned Features
 * Search function for pokemon.
