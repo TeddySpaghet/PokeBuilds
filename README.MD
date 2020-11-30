@@ -14,8 +14,10 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * Create or remove teams
 * View information about pokemom
 
-## WireFrames
-![pokebuildsERD](/images/736ad646ca5fbcd53695310dea4f5ba0.png)
+## Screenshots
+![Screenshots](images/unknown (1).png)
+![Screenshots](images/unknown (2).png)
+![Screenshots](images/unknown (3).png)
 
 
 ## User Stories
@@ -25,8 +27,11 @@ The Pokemon team you collect when playing a Pokemon game is a crucial part of th
 * User wants to create a team, with customizable Pokemon.
 * User wants to edit/delete their teams.
 
+## WireFrames
+![Wireframe](images/736ad646ca5fbcd53695310dea4f5ba0.png)
+
 ## ERD
-![Wireframe](/images/Screen_Shot_2020-11-16_at_2.46.24_PM.png)
+![pokeERD](/images/Screen_Shot_2020-11-16_at_2.46.24_PM.png)
 
 ## Technologies
 * Express.js
