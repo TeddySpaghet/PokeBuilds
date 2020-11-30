@@ -1,12 +1,14 @@
-
+@font-face {
+  font-family: "Pokemon-Hollow", sans-serif;
+  src: url("./fonts/Pokemon-Hollow.ttf") format("truefont");
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Press Start 2P', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: .75rem;
 }
 
 code {

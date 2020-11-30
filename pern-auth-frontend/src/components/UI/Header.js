@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Header.scss'
+// import pokebuilds from './src/img/pokebuilds.png'
 
 const Header = (props) => {
   return (
     <header>
       <div className='logo'>
+      {/* <img src={pokebuilds} alt='' /> */}
         <Link to={'/'}>Home!</Link>
       </div>
       <div className='links'>

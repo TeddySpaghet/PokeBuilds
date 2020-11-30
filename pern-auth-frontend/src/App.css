@@ -1,8 +1,4 @@
-@font-face {
-  font-family: "webfontpyPZ";
-  src: local("webfontpyPZ"), 
-  url("/projects/project3/PokeBuilds/pern-auth-frontend/src/fonts/PokemonHollowNormal-pyPZ.ttf") format("truefont")
-}
+
 
 .App {
   text-align: center;

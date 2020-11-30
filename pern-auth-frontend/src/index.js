@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import { UserProvider } from './UserContext'
+import "./fonts/Pokemon-Hollow.ttf"
 
 ReactDOM.render(
   // StrictMode is a tool for highlighting potential
