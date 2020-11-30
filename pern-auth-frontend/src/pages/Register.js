@@ -87,7 +87,6 @@ const Register = (props) => {
           Register
         </button>
       </form>
-      <hr />
     </div>
   )
 }
