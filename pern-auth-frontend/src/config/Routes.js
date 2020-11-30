@@ -10,7 +10,6 @@ import TeamShow from '../pages/TeamShow'
 import CreateTeam from '../pages/CreateTeam'
 import EditTeam from '../pages/EditTeam'
 import { TeamProvider } from '../components/Contexts/TeamContext'
-import { ModeProvider } from '../components/Contexts/ModeContext'
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const currentUser = localStorage.getItem('id')
@@ -29,38 +28,36 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 }
 
 const Routes = (props) => (
-  <ModeProvider>
-    <TeamProvider>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/register' component={Register} />
-        <PrivateRoute path='/teams/create' component={CreateTeam} />
+  <TeamProvider>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route path='/register' component={Register} />
+      <PrivateRoute path='/teams/create' component={CreateTeam} />
 
-        <PrivateRoute path='/teams/:id/edit' component={EditTeam} />
+      <PrivateRoute path='/teams/:id/edit' component={EditTeam} />
 
-        <PrivateRoute path='/teams/:id' component={TeamShow} />
-        <PrivateRoute path='/teams' component={TeamsPage} />
-        <Route
-          path='/login'
-          render={(routeComponentProps) => {
-            return (
-              <Login
-                {...routeComponentProps}
-                // more props to come here
-                currentUser={props.currentUser}
-                storeUser={props.storeUser}
-              />
-            )
-          }}
-        />
-        <PrivateRoute
-          path='/profile'
-          component={Profile}
-          currentUser={props.currentUser}
-        />
-      </Switch>
-    </TeamProvider>
-  </ModeProvider>
+      <PrivateRoute path='/teams/:id' component={TeamShow} />
+      <PrivateRoute path='/teams' component={TeamsPage} />
+      <Route
+        path='/login'
+        render={(routeComponentProps) => {
+          return (
+            <Login
+              {...routeComponentProps}
+              // more props to come here
+              currentUser={props.currentUser}
+              storeUser={props.storeUser}
+            />
+          )
+        }}
+      />
+      <PrivateRoute
+        path='/profile'
+        component={Profile}
+        currentUser={props.currentUser}
+      />
+    </Switch>
+  </TeamProvider>
 )
 
 export default Routes
