@@ -124,7 +124,8 @@ var create = function create(req, res) {
 };
 
 var update = function update(req, res) {
-  // make the update route
+  console.log(req.params); // make the update route
+
   db.team.update(req.body, {
     where: {
       id: req.params.id
@@ -132,7 +133,7 @@ var update = function update(req, res) {
   }).then(function (updatedTeam) {
     // Validations and error handling here
     res.json({
-      game: updatedTeam
+      team: updatedTeam
     });
   })["catch"](function (err) {
     return console.log('Error at teams#index', err);

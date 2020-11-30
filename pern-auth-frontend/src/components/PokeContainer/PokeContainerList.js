@@ -12,11 +12,13 @@ function PokeContainerList() {
       </Grid>
     )
   })
-  return <React.Fragment>
-            <Grid className="grid" container spacing={2}>
-              {pokemonList}
-            </Grid>
-          </React.Fragment>
+  return (
+    <React.Fragment>
+      <Grid className='grid' container spacing={2}>
+        {pokemonList}
+      </Grid>
+    </React.Fragment>
+  )
 }
 
 export default PokeContainerList
