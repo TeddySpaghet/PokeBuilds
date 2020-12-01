@@ -1,6 +1,6 @@
 .grid {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
 }
 
 @media screen and (max-width: 950px) {
@@ -9,3 +9,5 @@
     flex-direction: column;    
   }
 }
+
+//mui grit sx 2
