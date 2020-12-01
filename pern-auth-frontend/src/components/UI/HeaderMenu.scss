@@ -1,0 +1,27 @@
+.MuiButton-label {
+  background-image: url(../../../src/img/Hyper_Ball.jpg) !important;
+  background-size: contain;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  border-radius: 50%;
+  min-height: 80px;
+  max-width: 80px;
+  word-wrap: break-word;
+  color: black;
+  text-shadow: .1rem .075rem white;
+  box-shadow: .05rem 0rem .5rem  black;
+  margin-right: 1rem;
+}
+
+.MuiPaper-root,.MuiList-root {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  background-color: rgb(240,0,0);
+  
+
+  a {
+    color:white !important;
+    text-shadow: .1rem .075rem black;
+  }
+}
+

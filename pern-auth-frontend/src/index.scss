@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Pokemon-Hollow";
+  src: url("../src/fonts/Pokemon-Hollow.ttf") format("truefont");
+}
+
+$headerRed: rgb(238,21,21);
+$pokeballRed: rgb(240,0,0);
+$pokeballBlack: rgb(34,34,36);
+$pokeballWhite: rgb(240,240,240);
+
+body {
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: .75rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  text-decoration: none;
+}

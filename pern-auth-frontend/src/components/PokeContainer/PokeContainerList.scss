@@ -1,0 +1,13 @@
+.grid {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 950px) {
+  .grid {
+    display: flex;
+    flex-direction: column;    
+  }
+}
+
+//mui grit sx 2

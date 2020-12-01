@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { TeamProvider } from '../components/Contexts/TeamContext'
 import PokeBox from '../components/PokeBox'
 
-const CreateTeam = () => {
+const CreateTeam = (props) => {
   return (
     <div>
-      <Pokebox />
+      <PokeBox props={props} />
     </div>
   )
 }

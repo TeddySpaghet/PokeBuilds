@@ -1,76 +1,71 @@
-import React, { useState } from 'react'
-import { Grid, Box, Button } from '@material-ui/core'
-import ComboBox from './ComboBox'
-import missingno from '../img/missigno.png'
-import MoveBox from './MoveBox'
+import React, { useState, useContext } from 'react'
+import TeamModel from '../models/team'
+import PokeContainerList from './PokeContainer/PokeContainerList'
+import { TeamContext } from './Contexts/TeamContext'
+import { PokedexProvider } from './Contexts/PokedexContext'
+import PokemonModel from '../models/pokemon'
+import { UserContext } from '../UserContext'
+import { HistoryContext } from '../HistoryContext'
+import './PokeBox.scss'
 
+const PokeBox = (props) => {
+  // what is the mode context?
+  // On edit page, it needs to pulled from currentTeam.team.
+  // On create page, it needs to be pulled from TeamContext
 
+  const [currentUser, setCurrentUser] = useContext(UserContext)
+  const [history] = useContext(HistoryContext)
 
-function FormRow({
-  pokemon,
-  setPokemon,
-  selectedPokemon,
-  setSelectedPokemon,
-  moves,
-  setMoves,
-}) {
-  return (
-    <React.Fragment>
-      <Grid item xs={4}>
-        <Box component='span' m={1} height={200} width={200}>
-          <h1>{selectedPokemon ? selectedPokemon[0].name : 'missingno'}</h1>
-          <img src={{selectedPokemon ? selectedPokemon[0].name : missingno}} alt='Logo' />
-          <Button>Save</Button>
-        </Box>
-        <ComboBox
-          pokemon={pokemon}
-          setPokemon={setPokemon}
-          selectedPokemon={selectedPokemon}
-          setSelectedPokemon={setSelectedPokemon}
-        />
-        <MoveBox
-          selectedPokemon={selectedPokemon}
-          moves={moves}
-          setMoves={setMoves}
-        />
-      </Grid>
-    </React.Fragment>
-  )
-}
+  const [team] = useContext(TeamContext)
 
-const PokeBox = ({ moves, setMoves }) => {
-  const [pokemon, setPokemon] = useState([])
-  //   *** WHEN DROPDOWN IS CLICKED, PASS DOWN SELECTED POKEMON STATE LOGIC
-  const [selectedPokemon, setSelectedPokemon] = useState(null)
+  const [teamName, setTeamName] = useState('wow')
+  const [teamDescription, setTeamDescription] = useState('ok')
+
+  const handleTeamName = (e) => {
+    setTeamName(e.target.value)
+  }
+  const handleTeamDescription = (e) => {
+    setTeamDescription(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    console.log(currentUser)
+
+    // TODO conditionally call the TeamModel.update or TeamModel.create. Also create a MODE context.
+    // if(mode==='create'){
+    TeamModel.create({
+      teamName,
+      teamDescription,
+      team,
+      currentUser,
+    }).then((data) => {
+      console.log('Successful team creation', data)
+      // history.push('/profile')
+    })
+    // }
+  }
   return (
     <div>
-      <Grid container spacing={1}>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow
-            pokemon={pokemon}
-            setPokemon={setPokemon}
-            selectedPokemon={selectedPokemon}
-            setSelectedPokemon={setSelectedPokemon}
+      <PokedexProvider>
+        <PokeContainerList />
+        <form className='team-submit-form' onSubmit={handleSubmit}>
+          <input
+            type='text'
+            placeholder='Team Name'
+            onChange={handleTeamName}
           />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow
-            pokemon={pokemon}
-            setPokemon={setPokemon}
-            selectedPokemon={selectedPokemon}
-            setSelectedPokemon={setSelectedPokemon}
+          <input
+            type='text'
+            placeholder='Team Description'
+            onChange={handleTeamDescription}
           />
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <FormRow
-            pokemon={pokemon}
-            setPokemon={setPokemon}
-            selectedPokemon={selectedPokemon}
-            setSelectedPokemon={setSelectedPokemon}
-          />
-        </Grid>
-        <Button>Create Team</Button>
-      </Grid>
+          <button className='btn-submit' type='submit'>
+            Create Team
+          </button>
+        </form>
+      </PokedexProvider>
     </div>
   )
 }

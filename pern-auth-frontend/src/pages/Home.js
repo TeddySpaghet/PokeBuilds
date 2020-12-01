@@ -1,11 +1,16 @@
-import React from 'react';
+import React from 'react'
+import pokebuilds from '../img/pokebuilds.png'
+import pokeball from '../img/Poke_Ball.png'
+import './Home.scss'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to PERN Auth</h1>
+    <div className="home">
+      <img className="home-logo" src={pokebuilds} alt='' />
+      <p id="home-Title"> Create your Dream Team here! </p>
+      <img src={pokeball} alt='' />
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

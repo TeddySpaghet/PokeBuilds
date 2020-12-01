@@ -1,10 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import './index.css'
 import App from './App'
-import ComboBox from './components/ComboBox'
-import PokeBox from './components/PokeBox'
+import { UserProvider } from './UserContext'
+import { HistoryProvider } from './HistoryContext'
+import './fonts/Pokemon-Hollow.ttf'
+import './index.scss'
 
 ReactDOM.render(
   // StrictMode is a tool for highlighting potential
@@ -14,10 +15,11 @@ ReactDOM.render(
   // its descendants.
   <React.StrictMode>
     <Router>
-      <App />
-      <PokeBox>
-        <ComboBox />
-      </PokeBox>
+      <HistoryProvider>
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </HistoryProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

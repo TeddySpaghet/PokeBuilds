@@ -1,0 +1,36 @@
+
+.poke-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1rem;
+}
+
+.table-header {
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    background-color:rgb(240,0,0);
+    color: whitesmoke;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: -1rem;
+    padding-bottom: -1rem;
+    border: .2rem solid black;
+    border-radius: .25rem;
+    box-shadow: .01rem 0rem .2rem  black;
+    justify-content: space-between;
+    letter-spacing: .1rem;
+
+}
+
+
+
+#header-stats,#header-value {
+    margin-block-start: .5rem;
+    margin-block-end: .5rem;
+}
+
+.poke-image {
+    max-width: 300px;
+}
